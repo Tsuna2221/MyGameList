@@ -1,0 +1,52 @@
+.card-item {
+  width: 297px;
+  height: 167.25px;
+  background-size: 100% auto; }
+  .card-item .play-icon {
+    top: 16px;
+    left: 21px;
+    z-index: 10;
+    transition: 0.3s ease; }
+  .card-item .card-title {
+    left: 21px;
+    bottom: 18px;
+    z-index: 10; }
+    .card-item .card-title p {
+      transition: 0.3s ease; }
+  .card-item .card-video {
+    transition: 0.5s ease;
+    width: 100%;
+    height: auto;
+    opacity: 0; }
+    .card-item .card-video.active {
+      opacity: 1; }
+  .card-item .card-icon-set {
+    transition: 0.3s ease;
+    transition-delay: 0.1s; }
+    .card-item .card-icon-set img {
+      width: auto;
+      height: 13.28px;
+      margin-right: 6px; }
+      .card-item .card-icon-set img:last-child {
+        margin-right: 0px; }
+  .card-item .card-shadow {
+    transition: 0.4s ease;
+    transition-delay: 0.2s;
+    width: 100%;
+    height: 100%;
+    background: black;
+    background: -moz-linear-gradient(0deg, rgba(0, 0, 0, 0.924807) 0%, rgba(0, 0, 0, 0.577468) 45%, rgba(0, 212, 255, 0) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(0, 0, 0, 0.924807) 0%, rgba(0, 0, 0, 0.577468) 45%, rgba(0, 212, 255, 0) 100%);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.924807) 0%, rgba(0, 0, 0, 0.577468) 45%, rgba(0, 212, 255, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#00d4ff",GradientType=1); }
+  .card-item .bottom-progress {
+    left: 0;
+    bottom: 0;
+    height: 6px;
+    background-color: #491B9E;
+    transition: 0.3s ease; }
+  .card-item:hover .card-shadow, .card-item:hover .play-icon {
+    opacity: 0; }
+  .card-item:hover .card-title p, .card-item:hover .card-title .card-icon-set {
+    opacity: 0;
+    transform: translateX(-25px); }

@@ -11,11 +11,11 @@
     transition: 0.3s ease;
     z-index: -1;
     right: 0;
-    width: 3%;
+    width: 4px;
     height: 100%;
     background-color: #491B9E; }
     .main-sidebar .nav-item .sub-item .sub-border.hide {
-      background-color: transparent; }
+      width: 0%; }
   .main-sidebar .nav-item .sub-item:hover .sub-title {
     color: #fff; }
   .main-sidebar .nav-item .sub-item:hover .sub-border {

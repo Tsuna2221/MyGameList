@@ -9,7 +9,9 @@ body{
     font-family: "Metropolis";
 }
 
-a{
+a, p{
+    margin: 0;
+    padding: 0;
     text-decoration: none;
 }
 

@@ -1,2 +1,4 @@
 .main-content {
   width: 100%; }
+  .main-content .grid-container .cards-container {
+    flex-wrap: wrap; }

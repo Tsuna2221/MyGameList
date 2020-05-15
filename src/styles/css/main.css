@@ -6,7 +6,9 @@ body {
   min-height: -webkit-fill-available;
   font-family: "Metropolis"; }
 
-a {
+a, p {
+  margin: 0;
+  padding: 0;
   text-decoration: none; }
 
 input {

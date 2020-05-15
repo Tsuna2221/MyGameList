@@ -20,12 +20,12 @@
                 transition: 0.3s ease;
                 z-index: -1;
                 right: 0;
-                width: 3%;
+                width: 4px;
                 height: 100%;
                 background-color: $bg-secondary;
                 
                 &.hide{
-                    background-color: transparent;
+                    width: 0%;
                 }
             }
 
