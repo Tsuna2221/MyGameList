@@ -1,0 +1,27 @@
+.main-header {
+  transition: 0.3s ease;
+  width: calc(100vw - 80px * 2); }
+  .main-header .header-container {
+    height: 100px;
+    transition: 0.3s ease; }
+    .main-header .header-container .search-bar {
+      width: 540px;
+      height: 40px;
+      border-radius: 8px;
+      transition: 0.3s ease;
+      background-color: #272730; }
+      .main-header .header-container .search-bar::placeholder {
+        color: #6c6c75; }
+  .main-header.active {
+    background-color: #1c1c27;
+    width: calc(100vw - 54px * 2);
+    padding: 0 54px; }
+    .main-header.active .header-container {
+      height: 72px; }
+      .main-header.active .header-container .search-bar {
+        width: 540px;
+        height: 40px;
+        border-radius: 8px;
+        background-color: #363642; }
+        .main-header.active .header-container .search-bar::placeholder {
+          color: #8D8D8D; }

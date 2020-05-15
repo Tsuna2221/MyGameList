@@ -1,0 +1,205 @@
+.project-container {
+  opacity: 0;
+  transform: translateY(-200px); }
+  .project-container:nth-child(1) {
+    animation: skill-fade 0.8s ease forwards;
+    animation-delay: 0.1s; }
+
+.project-container {
+  opacity: 0;
+  transform: translateY(-200px); }
+  .project-container:nth-child(2) {
+    animation: skill-fade 0.8s ease forwards;
+    animation-delay: 0.2s; }
+
+.project-container {
+  opacity: 0;
+  transform: translateY(-200px); }
+  .project-container:nth-child(3) {
+    animation: skill-fade 0.8s ease forwards;
+    animation-delay: 0.3s; }
+
+.project-container {
+  opacity: 0;
+  transform: translateY(-200px); }
+  .project-container:nth-child(4) {
+    animation: skill-fade 0.8s ease forwards;
+    animation-delay: 0.4s; }
+
+.project-container {
+  opacity: 0;
+  transform: translateY(-200px); }
+  .project-container:nth-child(5) {
+    animation: skill-fade 0.8s ease forwards;
+    animation-delay: 0.5s; }
+
+.project-container {
+  opacity: 0;
+  transform: translateY(-200px); }
+  .project-container:nth-child(6) {
+    animation: skill-fade 0.8s ease forwards;
+    animation-delay: 0.6s; }
+
+.project-container {
+  opacity: 0;
+  transform: translateY(-200px); }
+  .project-container:nth-child(7) {
+    animation: skill-fade 0.8s ease forwards;
+    animation-delay: 0.7s; }
+
+.skill-cell {
+  opacity: 0;
+  transform: translateY(-100px); }
+  .skill-cell:nth-child(1) {
+    animation: skill-fade 0.55s ease forwards;
+    animation-delay: 0.07s; }
+
+.skill-cell {
+  opacity: 0;
+  transform: translateY(-100px); }
+  .skill-cell:nth-child(2) {
+    animation: skill-fade 0.55s ease forwards;
+    animation-delay: 0.14s; }
+
+.skill-cell {
+  opacity: 0;
+  transform: translateY(-100px); }
+  .skill-cell:nth-child(3) {
+    animation: skill-fade 0.55s ease forwards;
+    animation-delay: 0.21s; }
+
+.skill-cell {
+  opacity: 0;
+  transform: translateY(-100px); }
+  .skill-cell:nth-child(4) {
+    animation: skill-fade 0.55s ease forwards;
+    animation-delay: 0.28s; }
+
+.skill-cell {
+  opacity: 0;
+  transform: translateY(-100px); }
+  .skill-cell:nth-child(5) {
+    animation: skill-fade 0.55s ease forwards;
+    animation-delay: 0.35s; }
+
+.skill-cell {
+  opacity: 0;
+  transform: translateY(-100px); }
+  .skill-cell:nth-child(6) {
+    animation: skill-fade 0.55s ease forwards;
+    animation-delay: 0.42s; }
+
+.skill-cell {
+  opacity: 0;
+  transform: translateY(-100px); }
+  .skill-cell:nth-child(7) {
+    animation: skill-fade 0.55s ease forwards;
+    animation-delay: 0.49s; }
+
+.skill-cell {
+  opacity: 0;
+  transform: translateY(-100px); }
+  .skill-cell:nth-child(8) {
+    animation: skill-fade 0.55s ease forwards;
+    animation-delay: 0.56s; }
+
+.skill-cell {
+  opacity: 0;
+  transform: translateY(-100px); }
+  .skill-cell:nth-child(9) {
+    animation: skill-fade 0.55s ease forwards;
+    animation-delay: 0.63s; }
+
+.skill-cell {
+  opacity: 0;
+  transform: translateY(-100px); }
+  .skill-cell:nth-child(10) {
+    animation: skill-fade 0.55s ease forwards;
+    animation-delay: 0.7s; }
+
+.skill-cell {
+  opacity: 0;
+  transform: translateY(-100px); }
+  .skill-cell:nth-child(11) {
+    animation: skill-fade 0.55s ease forwards;
+    animation-delay: 0.77s; }
+
+.skill-cell {
+  opacity: 0;
+  transform: translateY(-100px); }
+  .skill-cell:nth-child(12) {
+    animation: skill-fade 0.55s ease forwards;
+    animation-delay: 0.84s; }
+
+.skill-cell {
+  opacity: 0;
+  transform: translateY(-100px); }
+  .skill-cell:nth-child(13) {
+    animation: skill-fade 0.55s ease forwards;
+    animation-delay: 0.91s; }
+
+.skill-cell {
+  opacity: 0;
+  transform: translateY(-100px); }
+  .skill-cell:nth-child(14) {
+    animation: skill-fade 0.55s ease forwards;
+    animation-delay: 0.98s; }
+
+.skill-cell {
+  opacity: 0;
+  transform: translateY(-100px); }
+  .skill-cell:nth-child(15) {
+    animation: skill-fade 0.55s ease forwards;
+    animation-delay: 1.05s; }
+
+.skill-cell {
+  opacity: 0;
+  transform: translateY(-100px); }
+  .skill-cell:nth-child(16) {
+    animation: skill-fade 0.55s ease forwards;
+    animation-delay: 1.12s; }
+
+.skill-cell {
+  opacity: 0;
+  transform: translateY(-100px); }
+  .skill-cell:nth-child(17) {
+    animation: skill-fade 0.55s ease forwards;
+    animation-delay: 1.19s; }
+
+.contact-form * {
+  opacity: 0; }
+  .contact-form *:nth-child(1) {
+    animation: skill-fade 0.55s ease forwards;
+    animation-delay: 0.1s; }
+
+.contact-form * {
+  opacity: 0; }
+  .contact-form *:nth-child(2) {
+    animation: skill-fade 0.55s ease forwards;
+    animation-delay: 0.2s; }
+
+.contact-form * {
+  opacity: 0; }
+  .contact-form *:nth-child(3) {
+    animation: skill-fade 0.55s ease forwards;
+    animation-delay: 0.3s; }
+
+.contact-form * {
+  opacity: 0; }
+  .contact-form *:nth-child(4) {
+    animation: skill-fade 0.55s ease forwards;
+    animation-delay: 0.4s; }
+
+.content.contained {
+  animation: show-fade 0.4s forwards; }
+
+@keyframes skill-fade {
+  to {
+    opacity: 1;
+    transform: translateY(0px); } }
+
+@keyframes show-fade {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }

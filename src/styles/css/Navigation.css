@@ -1,0 +1,20 @@
+.main-navigation.horizontal {
+  animation: reveal-fade 1.2s ease forwards;
+  opacity: 0; }
+
+.main-navigation .Navigation .NavButton {
+  top: 0px; }
+
+.main-navigation .Navigation.vertical {
+  top: 50%;
+  left: -100px;
+  transform: translateY(-50%); }
+
+.main-navigation .Navigation.horizontal .nav-container {
+  width: 70px; }
+
+@keyframes reveal-fade {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }

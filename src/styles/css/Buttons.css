@@ -1,0 +1,15 @@
+.nav-container .NavButton {
+  width: 43px;
+  height: 43px;
+  background-color: #fff; }
+  .nav-container .NavButton, .nav-container .NavButton span {
+    transition: 0.3s ease; }
+
+.nav-container:hover span, .nav-container:hover p {
+  color: #7F8EF1 !important; }
+
+.CircularButton {
+  transition: 0.3s ease;
+  padding: 8px 16px;
+  border-width: 2px;
+  border-style: solid; }

@@ -1,0 +1,44 @@
+@import "./Variables.scss";
+
+.main-header{
+    transition: 0.3s ease;
+    width: calc(100vw - 80px * 2);
+
+    .header-container{
+        height: 100px;
+        transition: 0.3s ease;
+
+        .search-bar{
+            width: 540px;
+            height: 40px;
+            border-radius: 8px;
+            transition: 0.3s ease;
+            background-color: $bg-hide-search-ph;
+
+            &::placeholder{
+                color: $tx-input-hide-placeholder;
+            }
+        }
+    }
+    
+    &.active{
+        background-color: $bg-header;
+        width: calc(100vw - 54px * 2);
+        padding: 0 54px;
+
+        .header-container{
+            height: 72px;
+
+            .search-bar{
+                width: 540px;
+                height: 40px;
+                border-radius: 8px;
+                background-color: $bg-search-ph;
+    
+                &::placeholder{
+                    color: $tx-input-placeholder;
+                }
+            }
+        }
+    }
+}

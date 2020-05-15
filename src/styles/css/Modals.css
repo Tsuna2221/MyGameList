@@ -1,0 +1,32 @@
+.image-modal {
+  transition: 0.4s ease opacity;
+  background-color: #00000080;
+  z-index: 1000;
+  top: 0;
+  left: 0; }
+  .image-modal .close {
+    top: 14px;
+    right: 24px;
+    z-index: 2000; }
+  .image-modal .spinner {
+    width: 80px;
+    height: 80px;
+    border-right: 3px solid #7F8EF1;
+    border-radius: 100px;
+    animation: spinner .7s linear infinite; }
+  .image-modal .column {
+    transition: 0.3s ease;
+    width: 50px;
+    height: 100%;
+    z-index: 1000; }
+    .image-modal .column:hover {
+      background-color: #00000025; }
+  .image-modal img {
+    max-width: 100%;
+    max-height: 100%; }
+
+@keyframes spinner {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }

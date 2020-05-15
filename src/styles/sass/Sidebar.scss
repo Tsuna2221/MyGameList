@@ -1,0 +1,38 @@
+@import "./Variables.scss";
+
+.main-sidebar{
+    width: 330px;
+
+    .nav-item{
+        .nav-anchor{
+            transition: 0.3s ease;
+            
+            &:hover{ color: #fff; }
+        }
+
+        .sub-item{
+            .sub-title{
+                transition: 0.3s ease;
+                padding: 8px 14px;
+            }
+    
+            .sub-border{
+                transition: 0.3s ease;
+                z-index: -1;
+                right: 0;
+                width: 3%;
+                height: 100%;
+                background-color: $bg-secondary;
+                
+                &.hide{
+                    background-color: transparent;
+                }
+            }
+
+            &:hover{
+                .sub-title{ color: #fff; }
+                .sub-border{ width: 100%; }
+            }
+        }
+    }
+}

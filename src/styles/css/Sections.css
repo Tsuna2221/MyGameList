@@ -1,0 +1,129 @@
+.project-container {
+  min-width: 262px;
+  min-height: 262px;
+  max-width: 262px;
+  max-height: 262px; }
+  .project-container img {
+    transition: 0.3s ease;
+    width: 100%;
+    height: 100%; }
+  .project-container .overlay {
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s ease;
+    background-color: #fff;
+    border-width: 0px;
+    border-style: solid;
+    border-color: transparent;
+    opacity: 0.5; }
+    .project-container .overlay .CircularButton, .project-container .overlay p {
+      transition: 0.5s ease; }
+    .project-container .overlay p {
+      transform: translateY(-200%); }
+    .project-container .overlay .CircularButton {
+      transform: translateY(200%); }
+  .project-container:hover img {
+    transform: scale(1.1);
+    transform-origin: 50% 50%; }
+  .project-container:hover .overlay {
+    top: 0%;
+    opacity: 1;
+    border-width: 5.5px;
+    background-color: rgba(255, 255, 255, 0.965); }
+  .project-container:hover .CircularButton, .project-container:hover p {
+    transform: translateY(0%); }
+
+.ProjectDescription {
+  width: 528px; }
+  .ProjectDescription .description {
+    line-height: 23px;
+    width: 357px; }
+  .ProjectDescription .desc-lang {
+    max-width: 48px;
+    max-height: 38px; }
+
+.ProjectDisplay span {
+  top: 0;
+  right: 0; }
+
+.ImageSlider {
+  width: 627px;
+  height: 80%; }
+  .ImageSlider .image-slider-container, .ImageSlider .project-name {
+    width: 493px;
+    max-width: 493px; }
+  .ImageSlider .image-slider-container {
+    height: 100%; }
+    .ImageSlider .image-slider-container .transition-container {
+      transition: 0.45s ease;
+      max-height: 85%; }
+      .ImageSlider .image-slider-container .transition-container div {
+        min-width: 493px;
+        background-color: #f8f8f8; }
+      .ImageSlider .image-slider-container .transition-container img {
+        height: 100%;
+        cursor: zoom-in; }
+        .ImageSlider .image-slider-container .transition-container img.active {
+          position: absolute; }
+  .ImageSlider .slider-navigation .circle-btn {
+    width: 9px;
+    height: 9px;
+    transition: 0.3s ease;
+    border: 1px solid #707070; }
+    .ImageSlider .slider-navigation .circle-btn.active {
+      background-color: #707070; }
+
+.SkillSection .skill-container {
+  width: 900px; }
+  .SkillSection .skill-container .skill-cell {
+    width: 105px;
+    height: 105px; }
+    .SkillSection .skill-container .skill-cell .about-skill {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+      .SkillSection .skill-container .skill-cell .about-skill p {
+        transition: 0.3s ease;
+        line-height: 0;
+        opacity: 0;
+        width: max-content; }
+    .SkillSection .skill-container .skill-cell .lang-svg {
+      transition: 0.3s ease;
+      width: 90%;
+      height: 90%; }
+      .SkillSection .skill-container .skill-cell .lang-svg.large {
+        width: 65%; }
+    .SkillSection .skill-container .skill-cell:hover .about-skill p {
+      opacity: 1; }
+    .SkillSection .skill-container .skill-cell:hover .lang-svg {
+      width: 56%;
+      height: 56%;
+      transform: translateY(-13px); }
+      .SkillSection .skill-container .skill-cell:hover .lang-svg.large {
+        width: 40%; }
+
+.ContactSection p {
+  width: 262px;
+  margin-left: 200px;
+  margin-right: 30px; }
+
+.ContactSection form {
+  align-items: flex-end; }
+  .ContactSection form input {
+    height: 40px;
+    padding: 4px 15px; }
+  .ContactSection form textarea {
+    height: 180px;
+    padding: 12px 15px; }
+  .ContactSection form input, .ContactSection form textarea {
+    transition: 0.45s ease;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    background-color: #efefef; }
+    .ContactSection form input::placeholder, .ContactSection form textarea::placeholder {
+      color: #979797; }
+    .ContactSection form input:focus, .ContactSection form textarea:focus {
+      border-color: #707070;
+      background-color: #fff; }

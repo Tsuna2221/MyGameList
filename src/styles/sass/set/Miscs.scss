@@ -1,0 +1,37 @@
+//Overflow
+
+.overflow-x-scroll{overflow-x: scroll}
+
+.overflow-y-scroll{overflow-y: scroll}
+
+.overflow-hide{overflow: hidden}
+
+.overflow-x-hide{overflow-x: hidden}
+
+.overflow-y-hide{overflow-y: hidden}
+
+//Miscs
+
+.clickable{cursor: pointer;}
+
+.no-border{border: none;}
+
+.no-outline{outline: none;}
+
+.no-select{user-select: none;}
+
+.no-events{pointer-events: none;}
+
+.no-decoration{text-decoration: none;}
+
+.no-opacity{opacity: 0 !important;}
+
+.rotate-180{
+    transform: rotate(180deg)
+}
+
+.z-index-100{ z-index: 100; }
+
+.z-index-1000{ z-index: 1000; }
+
+.transition{transition: 0.3s ease;}

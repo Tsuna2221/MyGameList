@@ -1,0 +1,28 @@
+@import "./Variables.scss";
+
+body{
+    background-color: $bg-main;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    font-family: "Metropolis";
+}
+
+a{
+    text-decoration: none;
+}
+
+input{
+    outline: none;
+}
+
+ul li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.content{
+    transform: translateY(100px);
+}
