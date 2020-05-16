@@ -1,7 +1,11 @@
 .card-item {
   width: 297px;
   height: 167.25px;
-  background-size: 100% auto; }
+  opacity: 0;
+  background-size: 100% auto;
+  background-position: center;
+  transition: 0.5s ease;
+  animation: reveal 0.6s forwards; }
   .card-item .play-icon {
     top: 16px;
     left: 21px;
@@ -25,8 +29,8 @@
     transition-delay: 0.1s; }
     .card-item .card-icon-set img {
       width: auto;
-      height: 13.28px;
-      margin-right: 6px; }
+      height: 14px;
+      margin-right: 8px; }
       .card-item .card-icon-set img:last-child {
         margin-right: 0px; }
   .card-item .card-shadow {
@@ -45,8 +49,18 @@
     height: 6px;
     background-color: #491B9E;
     transition: 0.3s ease; }
-  .card-item:hover .card-shadow, .card-item:hover .play-icon {
+  .card-item:hover {
+    background-size: 105% auto; }
+    .card-item:hover .card-shadow, .card-item:hover .play-icon {
+      opacity: 0; }
+    .card-item:hover .card-title {
+      pointer-events: none; }
+      .card-item:hover .card-title p, .card-item:hover .card-title .card-icon-set {
+        opacity: 0;
+        transform: translateX(-25px); }
+
+@keyframes reveal {
+  from {
     opacity: 0; }
-  .card-item:hover .card-title p, .card-item:hover .card-title .card-icon-set {
-    opacity: 0;
-    transform: translateX(-25px); }
+  to {
+    opacity: 1; } }

@@ -1,14 +1,36 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
  
 const Header = () => {
-    const [activeHeader, setHeaderState] = useState(false)
+    const [scrollHeight, setScrollHeight] = useState(0)
+    const [query, setQuery] = useState({search: ""})
+
+    const updateScrollHeight = () => setScrollHeight(window.scrollY)
+    const updateInput = ({target: { value }}, key) => setQuery({[key]: value})
+    const submitSearch = (e) => {
+        e.preventDefault();
+
+        const baseUrl = window.location.origin
+        const queryString = Object.keys(query).map((i) => `${i}=${query[i]}`).join("&")
+
+        if(query.search !== "" ) return window.location.href = `${baseUrl}/query?${queryString}`
+    }
+
+    useEffect(() => {
+        window.addEventListener("scroll", updateScrollHeight);
+    
+        return function cleanup() {
+          window.removeEventListener("scroll", updateScrollHeight);
+        };
+    });
 
     return (
-        <div className={`main-header pos-fixed pad-h-80${activeHeader ? " active" : ""}`}>
+        <div className={`main-header z-index-100 pos-fixed pad-h-80${scrollHeight > 40 ? " active" : ""}`}>
             <div className="header-container d-flex a-vertical cw-100 a-between">
                 <div className="d-flex a-vertical">
-                    <span onClick={() => setHeaderState(!activeHeader)} className="logo c-light s-24 mar-r-50">Logo?</span>
-                    <input className="search-bar c-light no-border pad-h-18" placeholder="Search for 350,000+ games" type="text"/>
+                    <span className="logo c-light s-24 mar-r-50">Logo?</span>
+                    <form onSubmit={submitSearch} action="">
+                        <input onChange={(e) => updateInput(e, "search")} className="search-bar c-light no-border pad-h-18" placeholder="Search for 350,000+ games" type="text"/>
+                    </form>
                 </div>
     
                 <div className="d-flex a-vertical">

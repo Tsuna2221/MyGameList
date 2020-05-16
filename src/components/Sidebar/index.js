@@ -4,28 +4,28 @@ const Sidebar = () => {
     const [currentHover, setHover] = useState(null)
     const navItems = [
         { 
-            "items": [
-                { "title": "Home" }
+            items: [
+                { title: "Home", to: "/" }
             ] 
         },
         {
-            "items": [
-                { "title": "Most Antecipated" },
-                { "title": "New Releases" },
-                { "title": "Most Popular" },
-                { "title": "Upcoming Games" },
+            items: [
+                { title: "Most Antecipated", to: "/most-antecipated" },
+                { title: "New Releases", to: "/new-releases" },
+                { title: "Most Popular", to: "/most-popular" },
+                { title: "Upcoming Games", to: "/upcoming" },
             ]
         },
         {
-            "items": [
+            items: [
                 { 
-                    "title": "Browse", 
-                    "subitems": [
-                        { "title": "By Platform" },
-                        { "title": "By Developer" },
-                        { "title": "By Publisher" },
-                        { "title": "By Genre" },
-                        { "title": "By Tags" },
+                    title: "Browse", 
+                    subitems: [
+                        { title: "By Platform", to: "/browse/platforms" },
+                        { title: "By Developer", to: "/browse/developers" },
+                        { title: "By Publisher", to: "/browse/publishers" },
+                        { title: "By Genre", to: "/browse/genres" },
+                        { title: "By Tags", to: "/browse/tags" },
                     ]
                 }
             ]
@@ -38,20 +38,20 @@ const Sidebar = () => {
             <ul>
                 {navItems.map(({items}, index) => (
                     <li key={index} className="nav-item mar-v-14 d-flex fdir-column align-end">
-                        {items.map(({title, subitems}, index) => (
+                        {items.map(({title, subitems, to}, index) => (
                                 <Fragment key={index}>
                                     {subitems ? 
                                         <Fragment>
                                             <p className="c-light s-25 w-bold mar-t-8 mar-b-12">{title}</p>
-                                            {subitems.map(({title}, index) => (
+                                            {subitems.map(({title, to}, index) => (
                                                 <div key={index} onMouseLeave={() => setHover(null)} onMouseEnter={() => setHover(index)} className="sub-item d-flex flex-end pos-relative cw-fit">
-                                                    <a href="#" className="sub-title c-light2 cw-fit s-15 w-bold">{title}</a>
+                                                    <a href={to} className="sub-title c-light2 cw-fit s-15 w-bold">{title}</a>
                                                     <div className={`sub-border pos-absolute${currentHover !== null && currentHover !== index ? " hide" : ""}`}/>
                                                 </div>
                                             ))}
                                         </Fragment>
                                     :
-                                        <a href="#" className="nav-anchor c-light s-25 w-bold mar-v-8">{title}</a>    
+                                        <a href={to} className="nav-anchor c-light s-25 w-bold mar-v-8">{title}</a>    
                                     }
                                 </Fragment>
                             ))}

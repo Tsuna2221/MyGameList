@@ -2,6 +2,12 @@
 
 .main-sidebar{
     width: 330px;
+    
+    ul{
+        position: sticky;
+        top: 0px;
+        // margin-top: 0px;
+    }
 
     .nav-item{
         .nav-anchor{

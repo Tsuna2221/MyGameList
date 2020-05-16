@@ -1,5 +1,8 @@
 .main-sidebar {
   width: 330px; }
+  .main-sidebar ul {
+    position: sticky;
+    top: 0px; }
   .main-sidebar .nav-item .nav-anchor {
     transition: 0.3s ease; }
     .main-sidebar .nav-item .nav-anchor:hover {

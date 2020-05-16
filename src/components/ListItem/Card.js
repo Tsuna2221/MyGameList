@@ -10,10 +10,11 @@ import MacOSIcon from '../../assets/macos.svg'
 import AndroidIcon from '../../assets/android.svg'
 import LinuxIcon from '../../assets/linux.svg'
 
-const Card = ({ game: { genres, background_image, id, metacritic, platforms, releases, tba, name, short_screenshots, clip } }) => {
+const Card = ({ game: { genres, background_image, image_background, id, metacritic, platforms, releases, tba, name, short_screenshots, clip } }) => {
     const [videoLoadPercentage, setPercentage] = useState(0)
     const [hovering, setHover] = useState(null)
-    const bgImage = background_image.replace("/media/", "/media/crop/600/400/")
+    const bg = background_image ? background_image : image_background;
+    const bgImage = bg ? bg.replace("/media/", "/media/crop/600/400/") : ""
     const consoleIcons = {
         "playstation5": PlayStationIcon,
         "playstation4": PlayStationIcon,
@@ -45,8 +46,19 @@ const Card = ({ game: { genres, background_image, id, metacritic, platforms, rel
             
             <div className="card-title pos-absolute">
                 <p className="s-19 w-bold c-light mar-b-12">{name}</p>
-                <div className="card-icon-set">
-                    {platforms.filter((i, index) => index < 3).map(({platform: {id, name, slug}}) => <img key={id} src={consoleIcons[slug]} alt={`${name} Logo`}/>)}
+                <div className="card-icon-set d-flex a-vertical">
+                    {
+                        platforms ? 
+                            platforms.filter((i, index) => index < 3).map(({platform: {id, name, slug}}) => <img key={id} src={consoleIcons[slug]} alt={`${name} Logo`}/>)
+                        :
+                            null
+                    }
+                    {
+                        platforms && platforms.length > 3 ?
+                            <p className="s-14 w-medium c-light">+{platforms.length - 3}</p>
+                        :
+                            null
+                    }
                 </div>
             </div>
             <div className="card-shadow"/>
