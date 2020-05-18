@@ -27,12 +27,6 @@
   .card-item .card-icon-set {
     transition: 0.3s ease;
     transition-delay: 0.1s; }
-    .card-item .card-icon-set img {
-      width: auto;
-      height: 14px;
-      margin-right: 8px; }
-      .card-item .card-icon-set img:last-child {
-        margin-right: 0px; }
   .card-item .card-shadow {
     transition: 0.4s ease;
     transition-delay: 0.2s;

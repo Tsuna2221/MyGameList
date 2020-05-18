@@ -2,38 +2,18 @@ import React, { useState, Fragment } from 'react';
 
 //Assets
 import PlayIcon from '../../assets/play-icon.svg'
-import PlayStationIcon from '../../assets/playstation.svg'
-import SwitchIcon from '../../assets/switch.svg'
-import XboxIcon from '../../assets/xbox.svg'
-import WindowsIcon from '../../assets/pc.svg'
-import MacOSIcon from '../../assets/macos.svg'
-import AndroidIcon from '../../assets/android.svg'
-import LinuxIcon from '../../assets/linux.svg'
+
+//Data
+import iconList from "../../data/platform-icons.json"; const { platIcons } = iconList;
 
 const Card = ({ game: { genres, background_image, image_background, id, metacritic, platforms, releases, tba, name, short_screenshots, clip } }) => {
     const [videoLoadPercentage, setPercentage] = useState(0)
     const [hovering, setHover] = useState(null)
     const bg = background_image ? background_image : image_background;
-    const bgImage = bg ? bg.replace("/media/", "/media/crop/600/400/") : ""
-    const consoleIcons = {
-        "playstation5": PlayStationIcon,
-        "playstation4": PlayStationIcon,
-        "playstation3": PlayStationIcon,
-        "ps-vita": PlayStationIcon,
-        "xbox-series-x": XboxIcon,
-        "xbox-one": XboxIcon,
-        "xbox-old": XboxIcon,
-        "xbox360": XboxIcon,
-        "nintendo-switch": SwitchIcon,
-        "pc": WindowsIcon,
-        "macos": MacOSIcon,
-        "ios": MacOSIcon,
-        "android": AndroidIcon,
-        "linux": LinuxIcon,
-    }
+    const bgImage = bg ? bg.replace("/media/", "/media/crop/600/400/") : "";
 
     return (
-        <div key={id} onMouseLeave={() => setTimeout(() => setHover(false), 400)} onMouseEnter={() => setHover(true)} className='card-item mar-4 pos-relative' style={{backgroundImage: `url(${bgImage})`}}>
+        <div key={id} onMouseLeave={() => setTimeout(() => setHover(false), 400)} onMouseEnter={() => setHover(true)} className='card-item mar-2 pos-relative' style={{backgroundImage: `url(${bgImage})`}}>
             {
                 clip ?
                     <Fragment>
@@ -49,7 +29,7 @@ const Card = ({ game: { genres, background_image, image_background, id, metacrit
                 <div className="card-icon-set d-flex a-vertical">
                     {
                         platforms ? 
-                            platforms.filter((i, index) => index < 3).map(({platform: {id, name, slug}}) => <img key={id} src={consoleIcons[slug]} alt={`${name} Logo`}/>)
+                            platforms.filter((i, index) => index < 3).map(({platform: {id, name, slug}}) => { if(platIcons.includes(`${slug}.svg`)) return <img key={id} src={require(`../../assets/${slug}.svg`)} alt={`${name} Logo`}/> })
                         :
                             null
                     }

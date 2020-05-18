@@ -1,0 +1,41 @@
+@import "./Variables.scss";
+
+.list-item{
+    width: 100%;
+    animation: reveal 0.6s forwards;
+    background-color: $bg-item-gray;
+
+    .list-title{
+        .screenshot-orb{
+            width: 14px;
+            height: 14px;
+            background-color: $bg-btn-gray;
+            border-radius: 50px;
+            margin-right: 8px;
+
+            &:last-child{
+                margin-right: 0px;
+            }
+        }
+
+        .list-game-name{
+            // white-space: nowrap;
+            // overflow: hidden;
+            // text-overflow: ellipsis;
+        }
+    }
+}
+
+.list-icon-set, .card-icon-set{
+                
+    img{
+        width: auto;
+        max-width: 34px;
+        height: 14px;
+        margin-right: 10px;
+
+        &:last-child{
+            margin-right: 0px;
+        }
+    }
+}

@@ -28,3 +28,18 @@ ul li{
 .content{
     transform: translateY(100px);
 }
+
+.mdi {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.metascore{
+    min-width: 60px;
+    height: 60px;
+    border-radius: 15px;
+}

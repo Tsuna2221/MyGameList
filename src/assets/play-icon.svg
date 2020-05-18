@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38">
-  <g id="Grupo_7" data-name="Grupo 7" transform="translate(-26 -18)">
-    <circle id="Elipse_2" data-name="Elipse 2" cx="19" cy="19" r="19" transform="translate(26 18)" fill="rgba(0,0,0,0.64)"/>
-    <path id="Polígono_2" data-name="Polígono 2" d="M6.84,0l6.84,10.335H0Z" transform="translate(51.1 29.732) rotate(90)" fill="#fff"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34">
+  <g id="play-icon" transform="translate(-26 -18)">
+    <circle id="Elipse_2" data-name="Elipse 2" cx="17" cy="17" r="17" transform="translate(26 18)" fill="rgba(0,0,0,0.64)"/>
+    <path id="Polígono_2" data-name="Polígono 2" d="M5.895,0,11.79,8.907H0Z" transform="translate(48.493 28.111) rotate(90)" fill="#fff"/>
   </g>
 </svg>

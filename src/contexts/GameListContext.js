@@ -7,6 +7,9 @@ import { getData, getFromFullUrl } from '../client'
 //Partials
 import { convertQueryString } from '../shared/partials'
 
+//Data
+import { results } from '../data/games.json'
+
 export const GameListContext = createContext();
 
 class GameListContextProvider extends Component {
@@ -21,12 +24,12 @@ class GameListContextProvider extends Component {
         this.titles = {
             "/": {
                 title: "New Releases and Trending",
-                query: "",
+                query: "?discover=true&ordering=-relevance",
                 type: "games"
             },
             "/query": {
                 title: `Results for "${this.query.search}"`,
-                query: window.location.search,
+                query: `${window.location.search}`,
                 type: "games"
             },
             "/most-antecipated": {
@@ -36,17 +39,17 @@ class GameListContextProvider extends Component {
             },
             "/new-releases": {
                 title: "New Releases",
-                query: `?dates=${this.handleDate(moment().subtract(2, 'month').calendar())},${this.now}&ordering=rating`,
+                query: `?dates=${this.handleDate(moment().subtract(2, 'month').calendar())},${this.now}&ordering=-added`,
                 type: "games"
             },
             "/most-popular": {
                 title: "Most Popular",
-                query: `?dates=${this.year - 1}-01-01,${this.year}-01-01`,
+                query: `?dates=${this.year - 1}-01-01,${this.year}-01-01&ordering=-added`,
                 type: "games"
             },
             "/upcoming": {
                 title: "Upcoming Games",
-                query: `?dates=${this.now},${this.handleDate(moment().add(2, 'years').calendar())}`,
+                query: `?dates=${this.now},${this.handleDate(moment().add(2, 'years').calendar())}&ordering=-added`,
                 type: "games"
             },
             "/browse/platforms": {
