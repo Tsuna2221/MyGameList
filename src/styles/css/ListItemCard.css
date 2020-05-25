@@ -43,8 +43,23 @@
     height: 6px;
     background-color: #491B9E;
     transition: 0.3s ease; }
+  .card-item .underlay {
+    transition: 0.3s ease;
+    transition-delay: 0.2s;
+    width: 100%;
+    height: 0px;
+    top: 100%;
+    background: #171721;
+    z-index: 10;
+    position: absolute;
+    overflow: hidden; }
+  .card-item.active {
+    z-index: 1000; }
   .card-item:hover {
+    z-index: 1000;
     background-size: 105% auto; }
+    .card-item:hover .underlay {
+      height: 200px; }
     .card-item:hover .card-shadow, .card-item:hover .play-icon {
       opacity: 0; }
     .card-item:hover .card-title {

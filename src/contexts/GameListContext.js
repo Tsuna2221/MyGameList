@@ -81,23 +81,23 @@ class GameListContextProvider extends Component {
     }
 
     state = {
-        games: [],
+        games: [...results],
         next: null,
         loading: true
     }
 
-    componentDidMount = () => {
-        const path = window.location.pathname;
-        const pathQuery = this.titles[path]
+    // componentDidMount = () => {
+    //     const path = window.location.pathname;
+    //     const pathQuery = this.titles[path]
 
-        window.addEventListener('scroll', this.detectBottom)
+    //     window.addEventListener('scroll', this.detectBottom)
 
-        this.setState({...this.state, loading: true})
+    //     this.setState({...this.state, loading: true})
 
-        getData(pathQuery.type, pathQuery.query).then(({results, next}) => {
-            this.setState({...this.state, games: results, next, loading: false})
-        })
-    }
+    //     getData(pathQuery.type, pathQuery.query).then(({results, next}) => {
+    //         this.setState({...this.state, games: results, next, loading: false})
+    //     })
+    // }
 
     componentWillUnmount = () => window.removeEventListener('scroll', this.detectBottom)
 

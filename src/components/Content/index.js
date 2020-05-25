@@ -13,7 +13,7 @@ const Content = () => {
     const path = window.location.pathname;
 
     const { games, titles } = useContext(GameListContext);
-    const [viewStyle, setViewStyle] = useState(viewIcons[1]);
+    const [viewStyle, setViewStyle] = useState(viewIcons[0]);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
     const margin = 60;

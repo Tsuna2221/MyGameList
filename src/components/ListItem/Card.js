@@ -13,7 +13,12 @@ const Card = ({ game: { genres, background_image, image_background, id, metacrit
     const bgImage = bg ? bg.replace("/media/", "/media/crop/600/400/") : "";
 
     return (
-        <div key={id} onMouseLeave={() => setTimeout(() => setHover(false), 400)} onMouseEnter={() => setHover(true)} className='card-item mar-2 pos-relative' style={{backgroundImage: `url(${bgImage})`}}>
+        <div key={id} onMouseLeave={() => setTimeout(() => setHover(false), 400)} onMouseEnter={() => setHover(true)} className={`card-item mar-2 pos-relative ${hovering ? "active" : ""}`} style={{backgroundImage: `url(${bgImage})`}}>
+            <div className="underlay">
+                <h1>hello</h1>
+                <h1>hello</h1>
+                <h1>hello</h1>
+            </div>
             {
                 clip ?
                     <Fragment>
