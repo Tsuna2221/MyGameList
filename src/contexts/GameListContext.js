@@ -2,7 +2,7 @@ import React, { createContext, Component } from 'react';
 import moment from 'moment';
 
 //Client
-import { getData, getFromFullUrl } from '../client'
+import { getData, getFromFullUrl, getGameData } from '../client'
 
 //Partials
 import { convertQueryString } from '../shared/partials'
@@ -32,22 +32,22 @@ class GameListContextProvider extends Component {
                 query: `${window.location.search}`,
                 type: "games"
             },
-            "/most-antecipated": {
+            "/home/most-antecipated": {
                 title: "Most Antecipated",
                 query: `?dates=${this.now},${this.handleDate(moment().add(6, 'month').calendar())}&ordering=-added`,
                 type: "games"
             },
-            "/new-releases": {
+            "/home/new-releases": {
                 title: "New Releases",
                 query: `?dates=${this.handleDate(moment().subtract(2, 'month').calendar())},${this.now}&ordering=-added`,
                 type: "games"
             },
-            "/most-popular": {
+            "/home/most-popular": {
                 title: "Most Popular",
                 query: `?dates=${this.year - 1}-01-01,${this.year}-01-01&ordering=-added`,
                 type: "games"
             },
-            "/upcoming": {
+            "/home/upcoming": {
                 title: "Upcoming Games",
                 query: `?dates=${this.now},${this.handleDate(moment().add(2, 'years').calendar())}&ordering=-added`,
                 type: "games"
@@ -81,23 +81,35 @@ class GameListContextProvider extends Component {
     }
 
     state = {
-        games: [...results],
+        games: [],
+        pathGame: {},
         next: null,
-        loading: true
+        loading: true,
+        gameLoading: true
     }
 
-    // componentDidMount = () => {
-    //     const path = window.location.pathname;
-    //     const pathQuery = this.titles[path]
+    gameDataQuery = (game) => {
+        this.setState({...this.state, gameLoading: true})
+        
+        return getGameData(game).then(game => this.setState({...this.state, gameLoading: false, pathGame: game}))
+    }
 
-    //     window.addEventListener('scroll', this.detectBottom)
+    mainComponentQuery = () => {
+        const path = window.location.pathname;
+        const pathQuery = this.titles[path]
 
-    //     this.setState({...this.state, loading: true})
+        window.addEventListener('scroll', this.detectBottom)
 
-    //     getData(pathQuery.type, pathQuery.query).then(({results, next}) => {
-    //         this.setState({...this.state, games: results, next, loading: false})
-    //     })
-    // }
+        this.setState({...this.state, loading: true})
+
+        if(path.split("/")[1] !== "game"){
+            return getData(pathQuery.type, pathQuery.query).then(({results, next}) => {
+                this.setState({...this.state, games: results, next, loading: false})
+            })
+        }
+    }
+
+    // componentDidMount = () => this.mainComponentQuery()
 
     componentWillUnmount = () => window.removeEventListener('scroll', this.detectBottom)
 
@@ -119,9 +131,9 @@ class GameListContextProvider extends Component {
         return organizedArray;
     }
 
-    render(){
+    render(){        
         return (
-            <GameListContext.Provider value={{...this.state, titles: this.titles}}>
+            <GameListContext.Provider value={{...this.state, gameDataQuery: this.gameDataQuery, titles: this.titles}}>
                 {this.props.children}
             </GameListContext.Provider>
         )

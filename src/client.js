@@ -7,4 +7,8 @@ export const getData = (type, query) => {
     return axios.get(`${baseUrl}/${type}?page_size=50&${q}`, { headers: { 'User-Agent': 'local-gamedb-app' } }).then(({data}) => data);
 }
 
+export const getGameData = (game) => {
+    return axios.get(`${baseUrl}/games/${game}`, { headers: { 'User-Agent': 'local-gamedb-app' } }).then(({data}) => data);
+}
+
 export const getFromFullUrl = (url) => axios.get(url, { headers: { 'User-Agent': 'local-gamedb-app' } }).then(({data}) => data);

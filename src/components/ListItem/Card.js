@@ -1,4 +1,5 @@
 import React, { useState, Fragment } from 'react';
+import { Link } from 'react-router-dom'
 
 //Assets
 import PlayIcon from '../../assets/play-icon.svg'
@@ -11,7 +12,7 @@ import iconList from "../../data/platform-icons.json"; const { parentIcons } = i
 
 
 const Card = ({game}) => {
-    const { genres, parent_platforms, background_image, image_background, id, metacritic, platforms, releases, tba, name, short_screenshots, clip } = game;
+    const { slug, parent_platforms, background_image, image_background, id, metacritic, platforms, releases, tba, name, short_screenshots, clip } = game;
     const [videoLoadPercentage, setPercentage] = useState(0)
     const [hovering, setHover] = useState(null)
     const bg = background_image ? background_image : image_background;
@@ -47,7 +48,7 @@ const Card = ({game}) => {
                     }
                 </div>
             </div>
-            <div className="card-shadow"/>
+            <Link className="cw-100 ch-100" to={`/game/${slug}`}><div className="card-shadow"/></Link>
             <div style={{width: `${videoLoadPercentage}%`}} className={`bottom-progress pos-absolute ${videoLoadPercentage > 95 ? "no-opacity" : ""} ${hovering ? "" : "no-opacity"}`}/>
         </div>
     )

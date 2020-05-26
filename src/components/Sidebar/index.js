@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react';
+import { Link } from 'react-router-dom'
 
 const Sidebar = () => {
     const [currentHover, setHover] = useState(null)
@@ -10,10 +11,10 @@ const Sidebar = () => {
         },
         {
             items: [
-                { title: "Most Antecipated", to: "/most-antecipated" },
-                { title: "New Releases", to: "/new-releases" },
-                { title: "Most Popular", to: "/most-popular" },
-                { title: "Upcoming Games", to: "/upcoming" },
+                { title: "Most Antecipated", to: "/home/most-antecipated" },
+                { title: "New Releases", to: "/home/new-releases" },
+                { title: "Most Popular", to: "/home/most-popular" },
+                { title: "Upcoming Games", to: "/home/upcoming" },
             ]
         },
         {
@@ -45,13 +46,13 @@ const Sidebar = () => {
                                             <p className="c-light s-25 w-bold mar-t-8 mar-b-12">{title}</p>
                                             {subitems.map(({title, to}, index) => (
                                                 <div key={index} onMouseLeave={() => setHover(null)} onMouseEnter={() => setHover(index)} className="sub-item d-flex flex-end pos-relative cw-fit">
-                                                    <a href={to} className="sub-title c-light2 cw-fit s-15 w-bold">{title}</a>
+                                                    <Link to={to} className="sub-title c-light2 cw-fit s-15 w-bold">{title}</Link>
                                                     <div className={`sub-border pos-absolute${currentHover !== null && currentHover !== index ? " hide" : ""}`}/>
                                                 </div>
                                             ))}
                                         </Fragment>
                                     :
-                                        <a href={to} className="nav-anchor c-light s-25 w-bold mar-v-8">{title}</a>    
+                                        <Link to={to} className="nav-anchor c-light s-25 w-bold mar-v-8">{title}</Link>
                                     }
                                 </Fragment>
                             ))}
