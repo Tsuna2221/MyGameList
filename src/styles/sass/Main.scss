@@ -15,11 +15,13 @@ a, p{
     text-decoration: none;
 }
 
+a:hover{ text-decoration: underline; }
+
 input{
     outline: none;
 }
 
-ul li{
+ul, li{
     margin: 0;
     padding: 0;
     list-style: none;

@@ -1,22 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 //Components
 import { Button } from '../../shared/Buttons';
 import Metascore from '../../shared/Metascore';
 
 //Data
-import iconList from "../../data/platform-icons.json"; const { platIcons } = iconList;
+import iconList from "../../data/platform-icons.json"; const { parentIcons } = iconList;
 
 
-const List = ({ width, game: { genres, background_image, image_background, id, metacritic, platforms, released, tba, name, short_screenshots, clip } }) => {
+const List = ({ width, game: { genres, parent_platforms, background_image, image_background, id, metacritic, platforms, released, tba, name, short_screenshots, clip } }) => {
     const bg = background_image ? background_image : image_background;
     const bgImage = bg ? bg.replace("/media/", "/media/crop/600/400/") : "";
-    const baseHeight = 190;
-    const imgMargin = 22;
+    const baseHeight = 190, imgMargin = 22;
     const imgContainerHeight = Math.ceil(baseHeight - (imgMargin * 2));
     const imageWidth = Math.ceil((imgContainerHeight / 9) * 16);
     const genreString = genres.map(({name}) => name).join(", ");
-
+        
     return (
         <div key={id} style={{height: baseHeight}} className='list-item d-flex a-vertical mar-b-10'>
             <img style={{width: imageWidth - 20, height: imgContainerHeight, marginLeft: imgMargin}} src={bgImage} alt=""/>
@@ -30,8 +29,8 @@ const List = ({ width, game: { genres, background_image, image_background, id, m
                             <h2 style={{maxWidth: (48/100) * width}} className="list-game-name c-light w-bold s-28 mar-0 mar-r-20">{name}</h2>
                             <div className="list-icon-set d-flex a-vertical">
                                 {
-                                    platforms ? 
-                                        platforms.filter((i, index) => index < 3).map(({platform: {id, name, slug}}) => { if(platIcons.includes(`${slug}.svg`)) return <img key={id} src={require(`../../assets/${slug}.svg`)} alt={`${name} Logo`}/> })
+                                    parent_platforms ? 
+                                        parent_platforms.filter((i, index) => index < 3).map(({platform: {id, name, slug}}) => { if(parentIcons.includes(`${slug}.svg`)) return <img key={id} src={require(`../../assets/parent/${slug}.svg`)} alt={`${name} Logo`}/> })
                                     :
                                         null
                                 }

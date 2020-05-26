@@ -18,8 +18,22 @@
         }
     }
 
+    &.full{
+        transition: 0.24s ease;
+        height: 100%;
+        background-color: transparent;
+
+        &:hover{
+            background-color: $bg-secondary;
+        }
+    }
+
     &.default{
         border-radius: 4px;
         padding: 11.5px 24.5px;
     }
+}
+
+.full-btn-container{
+    height: 60px;
 }

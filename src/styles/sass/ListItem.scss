@@ -5,19 +5,11 @@
     animation: reveal 0.6s forwards;
     background-color: $bg-item-gray;
 
+    .list-image{
+        transition: 0.3s ease;
+    }
+
     .list-title{
-        .screenshot-orb{
-            width: 14px;
-            height: 14px;
-            background-color: $bg-btn-gray;
-            border-radius: 50px;
-            margin-right: 8px;
-
-            &:last-child{
-                margin-right: 0px;
-            }
-        }
-
         .list-game-name{
             // white-space: nowrap;
             // overflow: hidden;
@@ -37,5 +29,28 @@
         &:last-child{
             margin-right: 0px;
         }
+    }
+}
+
+.screenshot-orb{
+    width: 14px;
+    height: 14px;
+    background-color: $bg-btn-gray;
+    border-radius: 50px;
+    margin-right: 8px;
+    transition: 0.3s ease;
+
+    &.card{
+        margin-right: 12px;
+        width: 15px;
+        height: 15px;
+    }
+
+    &:hover{
+        background-color: $tx-shade;
+    }
+
+    &:last-child{
+        margin-right: 0px;
     }
 }

@@ -36,5 +36,13 @@
         "xbox-old.svg",
         "xbox-one.svg",
         "xbox-series-x.svg"
+    ],
+    "parentIcons": [
+        "pc.svg",
+        "playstation.svg",
+        "xbox.svg",
+        "nintendo.svg",
+        "mac.svg",
+        "linux.svg"
     ]
 }

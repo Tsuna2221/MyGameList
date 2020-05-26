@@ -9,6 +9,15 @@
     transition: 0.2s ease; }
     .btn.small span {
       color: white; }
+  .btn.full {
+    transition: 0.24s ease;
+    height: 100%;
+    background-color: transparent; }
+    .btn.full:hover {
+      background-color: #491B9E; }
   .btn.default {
     border-radius: 4px;
     padding: 11.5px 24.5px; }
+
+.full-btn-container {
+  height: 60px; }

@@ -2,14 +2,8 @@
   width: 100%;
   animation: reveal 0.6s forwards;
   background-color: #171721; }
-  .list-item .list-title .screenshot-orb {
-    width: 14px;
-    height: 14px;
-    background-color: #40404B;
-    border-radius: 50px;
-    margin-right: 8px; }
-    .list-item .list-title .screenshot-orb:last-child {
-      margin-right: 0px; }
+  .list-item .list-image {
+    transition: 0.3s ease; }
 
 .list-icon-set img, .card-icon-set img {
   width: auto;
@@ -17,4 +11,20 @@
   height: 14px;
   margin-right: 10px; }
   .list-icon-set img:last-child, .card-icon-set img:last-child {
+    margin-right: 0px; }
+
+.screenshot-orb {
+  width: 14px;
+  height: 14px;
+  background-color: #40404B;
+  border-radius: 50px;
+  margin-right: 8px;
+  transition: 0.3s ease; }
+  .screenshot-orb.card {
+    margin-right: 12px;
+    width: 15px;
+    height: 15px; }
+  .screenshot-orb:hover {
+    background-color: #726F6F; }
+  .screenshot-orb:last-child {
     margin-right: 0px; }

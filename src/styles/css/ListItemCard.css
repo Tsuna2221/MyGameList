@@ -43,23 +43,15 @@
     height: 6px;
     background-color: #491B9E;
     transition: 0.3s ease; }
-  .card-item .underlay {
-    transition: 0.3s ease;
-    transition-delay: 0.2s;
-    width: 100%;
-    height: 0px;
-    top: 100%;
-    background: #171721;
-    z-index: 10;
-    position: absolute;
-    overflow: hidden; }
   .card-item.active {
     z-index: 1000; }
   .card-item:hover {
     z-index: 1000;
     background-size: 105% auto; }
     .card-item:hover .underlay {
-      height: 200px; }
+      height: 300px;
+      border: 1px solid #36344a;
+      border-top: 1px solid transparent; }
     .card-item:hover .card-shadow, .card-item:hover .play-icon {
       opacity: 0; }
     .card-item:hover .card-title {
@@ -67,6 +59,25 @@
       .card-item:hover .card-title p, .card-item:hover .card-title .card-icon-set {
         opacity: 0;
         transform: translateX(-25px); }
+
+.underlay {
+  transition: 0.3s ease;
+  transition-delay: 0.12s;
+  width: 100%;
+  height: 0px;
+  top: 100%;
+  background: #171721;
+  z-index: 10;
+  position: absolute;
+  overflow: hidden;
+  box-sizing: border-box;
+  border: 1px solid transparent; }
+  .underlay .orb-container {
+    height: 54px; }
+  .underlay .card-line {
+    border-bottom: 1px solid #726F6F; }
+    .underlay .card-line:last-child {
+      border-bottom-color: transparent; }
 
 @keyframes reveal {
   from {
