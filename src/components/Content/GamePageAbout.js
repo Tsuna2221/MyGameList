@@ -67,7 +67,7 @@ const GamePageAbout = ({game: { name, achievements, parent_platforms, platforms,
                     ))}}/>
                 </div>
             </div>
-            <AchievementsView achievements={achievements}/>
+            { achievements.length > 0 ? <AchievementsView achievements={achievements}/> : null }
         </div>
     )
 }

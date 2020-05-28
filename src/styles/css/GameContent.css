@@ -12,20 +12,28 @@
   .game-display .game-border {
     border-color: #40404B;
     margin: 26px 0; }
+  .game-display .image-viewer .big-picture-container {
+    height: 295px;
+    max-height: 295px;
+    overflow: hidden;
+    display: flex;
+    align-items: center; }
+    .game-display .image-viewer .big-picture-container .big-picture {
+      opacity: 0;
+      animation: fade-game-background 0.3s forwards; }
   .game-display .image-viewer .viewer-list {
     width: 100%;
     overflow-x: scroll; }
-    .game-display .image-viewer .viewer-list::-webkit-scrollbar {
-      height: 12px;
-      border-radius: 10px; }
-    .game-display .image-viewer .viewer-list::-webkit-scrollbar-track {
-      background: #26262e; }
-    .game-display .image-viewer .viewer-list::-webkit-scrollbar-thumb {
-      background: #0b0b0f; }
-    .game-display .image-viewer .viewer-list img {
-      width: 130px;
-      margin-right: 6px; }
-      .game-display .image-viewer .viewer-list img:last-child {
+    .game-display .image-viewer .viewer-list .preview-container {
+      margin-right: 8px; }
+      .game-display .image-viewer .viewer-list .preview-container .overlay-shadow {
+        background-color: rgba(37, 37, 46, 0.89);
+        animation: fade-game-background 0.24s forwards; }
+      .game-display .image-viewer .viewer-list .preview-container img {
+        width: 130px;
+        max-height: 73px;
+        border: 2px solid #363642; }
+      .game-display .image-viewer .viewer-list .preview-container:last-child {
         margin-right: 0px; }
   .game-display .add-to-list, .game-display .achivement-view {
     background-color: #171721; }
@@ -50,6 +58,16 @@
       color: #726F6F;
       font-weight: 300; }
 
+.similar-container::-webkit-scrollbar, .viewer-list::-webkit-scrollbar {
+  height: 12px;
+  border-radius: 10px; }
+
+.similar-container::-webkit-scrollbar-track, .viewer-list::-webkit-scrollbar-track {
+  background: #26262e; }
+
+.similar-container::-webkit-scrollbar-thumb, .viewer-list::-webkit-scrollbar-thumb {
+  background: #0b0b0f; }
+
 .main-game-bg {
   top: 0;
   right: 0; }
@@ -60,4 +78,8 @@
   .main-game-bg .overlay-shadow {
     width: 100%;
     height: 700px;
-    background-color: #13131b99; }
+    background-color: #13131b99;
+    transition: 0.5s ease;
+    transition-delay: 0.4s; }
+    .main-game-bg .overlay-shadow:hover {
+      background-color: transparent; }

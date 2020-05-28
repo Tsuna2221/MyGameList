@@ -26,6 +26,10 @@
         width: calc(100vw - 54px * 2);
         padding: 0 54px;
 
+        &.type-game{
+            background-color: #1c1c27d2;
+        }
+
         .header-container{
             height: 72px;
 

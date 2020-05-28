@@ -2,6 +2,7 @@
 
 .card-item{
     width: 297px;
+    min-width: 297px;
     height: 167.25px;
     opacity: 0;
     background-size: 100% auto;
@@ -37,7 +38,7 @@
         }
     }
 
-    .card-icon-set{
+    .game-icon-set{
         transition: 0.3s ease;
         transition-delay: 0.1s;
     }
@@ -82,7 +83,7 @@
         .card-title{
             pointer-events: none;
             
-            p, .card-icon-set{
+            p, .game-icon-set{
                 opacity: 0;
                 transform: translateX(-25px);
             }

@@ -14,6 +14,7 @@ const SelectItem = ({label, name, className}) => {
         <div className={`select-container ${className}`}>
             <label className="s-14 w-regular c-shade" htmlFor={name}>{label}</label><br/>
             <select className="mar-t-6" name={name} id={name}>
+                <option value={null}>----</option>
                 {
                     options[name].map(item => (
                         <option value={item}>{item}</option>

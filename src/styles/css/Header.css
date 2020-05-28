@@ -16,6 +16,8 @@
     background-color: #1c1c27;
     width: calc(100vw - 54px * 2);
     padding: 0 54px; }
+    .main-header.active.type-game {
+      background-color: #1c1c27d2; }
     .main-header.active .header-container {
       height: 72px; }
       .main-header.active .header-container .search-bar {

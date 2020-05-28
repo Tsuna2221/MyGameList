@@ -38,7 +38,12 @@ const CardUnderlay = ({game}) => {
     return (
         <div ref={underlay} style={{maxHeight: scrollHeight }} className="underlay">
             <div className="orb-container d-flex a-center">
-                {short_screenshots.map(({id, image}) => <div className="screenshot-orb card" key={id}/>)}    
+                {
+                    short_screenshots ? 
+                        short_screenshots.map(({id, image}) => <div className="screenshot-orb card" key={id}/>)
+                    :
+                        null
+                }    
             </div>
             <div className="pad-h-24">
                 <div className="d-flex a-between a-vertical">

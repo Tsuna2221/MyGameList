@@ -13,7 +13,6 @@ export const GamePageContext = createContext();
 
 class GamePageContextProvider extends Component {
     state = {
-        // game: {...hollowData, screenshots: screenshots.results, achievements: achievements.results}, 
         game: {},
         similar: [...suggested.results],
         next: {},
@@ -21,22 +20,30 @@ class GamePageContextProvider extends Component {
     }
 
     // componentDidMount = () => setTimeout(() => {
-    //     const game = {...hollowData, screenshots: screenshots.results, achievements: achievements.results};
+    //     const game = { ...hollowData, similar: suggested.results, screenshots: screenshots.results, achievements: achievements.results };
 
     //     this.setState({...this.state, loading: false, game})
     // }, 2000);
 
+    drawGame = () => {
+        return this.setState({...this.state, loading: true}, () => getGameData(this.props.match.params.id).then(([game, achievements, similar, shots]) => this.setState({
+            ...this.state, 
+            game: { ...game, achievements: achievements.results, screenshots: shots.results, similar: similar.results }, 
+            next: { achievements: achievements.next, similar: similar.next },
+            loading: false
+        })))
+    }
 
-    componentDidMount = () => getGameData(this.props.match.params.id).then(([game, achievements, similar, shots]) => this.setState({
-        ...this.state, 
-        game: { ...game, achievements: achievements.results, screenshots: shots.results }, 
-        next: { achievements: achievements.next, similar: similar.next },
-        loading: false
-    }))
+    componentDidMount = () => this.drawGame();
+
+    reRender = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth'})
+        return this.drawGame();
+    };
     
     render(){
         return (
-            <GamePageContext.Provider value={{...this.state}}>
+            <GamePageContext.Provider value={{...this.state, reRender: this.reRender}}>
                 {this.props.children}
             </GamePageContext.Provider>
         )

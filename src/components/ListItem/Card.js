@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment, useContext } from 'react';
 import { Link } from 'react-router-dom'
 
 //Assets
@@ -7,11 +7,15 @@ import PlayIcon from '../../assets/play-icon.svg'
 //Components
 import CardUnderlay from "./CardUnderlay";
 
+//Contexts
+import { GamePageContext } from '../../contexts/GamePageContext'
+
 //Data
 import iconList from "../../data/platform-icons.json"; const { parentIcons } = iconList;
 
 
-const Card = ({game}) => {
+const Card = ({game, hideUnderlay, videoPreview, fromSimilar}) => {
+    const context = useContext(GamePageContext)
     const { slug, parent_platforms, background_image, image_background, id, metacritic, platforms, releases, tba, name, short_screenshots, clip } = game;
     const [videoLoadPercentage, setPercentage] = useState(0)
     const [hovering, setHover] = useState(null)
@@ -20,12 +24,15 @@ const Card = ({game}) => {
 
     return (
         <div key={id} onMouseLeave={() => setTimeout(() => setHover(false), 400)} onMouseEnter={() => setHover(true)} className={`card-item mar-2 pos-relative ${hovering ? "active" : ""}`} style={{backgroundImage: `url(${bgImage})`}}>
-            <CardUnderlay game={game}/>
+            {hideUnderlay ? null : <CardUnderlay game={game}/>}
             {
                 clip ?
                     <Fragment>
                         <img src={PlayIcon} alt="Video" className="play-icon pos-absolute"/>
-                        {/* <video onProgress={({target: { buffered, duration }}) => setPercentage((buffered.end(0) / duration) * 100)} className={`card-video pos-absolute ${videoLoadPercentage > 95 ? "" : "no-opacity"} ${hovering ? "active" : ""}`} autoPlay controls={false} loop muted src={hovering ? clip.clips["320"] : ""}/> */}
+                        {
+                            !videoPreview ? null :
+                            <video onProgress={({target: { buffered, duration }}) => setPercentage((buffered.end(0) / duration) * 100)} className={`card-video pos-absolute ${videoLoadPercentage > 95 ? "" : "no-opacity"} ${hovering ? "active" : ""}`} autoPlay controls={false} loop muted src={hovering ? clip.clips["320"] : ""}/>
+                        }
                     </Fragment>
                 :
                     null
@@ -48,7 +55,7 @@ const Card = ({game}) => {
                     }
                 </div>
             </div>
-            <Link className="cw-100 ch-100" to={`/game/${slug}`}><div className="card-shadow"/></Link>
+            <Link onClick={context ? context.reRender : null} className="cw-100 ch-100" to={`/game/${slug}`}><div className="card-shadow"/></Link>
             <div style={{width: `${videoLoadPercentage}%`}} className={`bottom-progress pos-absolute ${videoLoadPercentage > 95 ? "no-opacity" : ""} ${hovering ? "" : "no-opacity"}`}/>
         </div>
     )

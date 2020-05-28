@@ -81,7 +81,7 @@ class GameListContextProvider extends Component {
     }
 
     state = {
-        games: [],
+        games: [...results],
         pathGame: {},
         next: null,
         loading: true,
@@ -100,7 +100,9 @@ class GameListContextProvider extends Component {
         })
     }
 
-    componentDidMount = () => this.mainComponentQuery()
+    // componentDidMount = () => this.mainComponentQuery()
+
+    reRender = () => this.mainComponentQuery()
 
     componentWillUnmount = () => window.removeEventListener('scroll', this.detectBottom)
 
@@ -124,7 +126,7 @@ class GameListContextProvider extends Component {
 
     render(){        
         return (
-            <GameListContext.Provider value={{...this.state, gameDataQuery: this.gameDataQuery, titles: this.titles}}>
+            <GameListContext.Provider value={{...this.state, reRender: this.reRender, gameDataQuery: this.gameDataQuery, titles: this.titles}}>
                 {this.props.children}
             </GameListContext.Provider>
         )

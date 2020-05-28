@@ -20,14 +20,15 @@ function App() {
 		<Router>
 			<Switch>
 				<div className='Main'>
-					<Header/>
 					<Route exact render={(props) => (
 						<GamePageContextProvider {...props}>
+							<Header type="game"/>
 							<GameContent {...props}/>
 						</GamePageContextProvider>
 					)} path="/game/:id"/>
 					<Route exact path={["/", "/query", "/home/:path", "/browse/:path"]}>
 						<GameListContextProvider>
+							<Header type="list"/>
 							<Main/>
 						</GameListContextProvider>
 					</Route>

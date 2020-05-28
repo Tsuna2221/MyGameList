@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 
 //Components
 import { Button } from '../../shared/Buttons';
@@ -8,7 +9,7 @@ import Metascore from '../../shared/Metascore';
 import iconList from "../../data/platform-icons.json"; const { parentIcons } = iconList;
 
 
-const List = ({ width, game: { genres, parent_platforms, background_image, image_background, id, metacritic, platforms, released, tba, name, short_screenshots, clip } }) => {
+const List = ({ width, game: { genres, parent_platforms, background_image, image_background, slug, id, metacritic, platforms, released, tba, name, short_screenshots, clip } }) => {
     const bg = background_image ? background_image : image_background;
     const bgImage = bg ? bg.replace("/media/", "/media/crop/600/400/") : "";
     const baseHeight = 190, imgMargin = 22;
@@ -26,7 +27,7 @@ const List = ({ width, game: { genres, parent_platforms, background_image, image
                 <div className="d-flex a-vertical a-between mar-t-20 mar-b-18">
                     <div className="details-container mar-r-10">
                         <div className="d-flex mar-b-8">
-                            <h2 style={{maxWidth: (48/100) * width}} className="list-game-name c-light w-bold s-28 mar-0 mar-r-20">{name}</h2>
+                            <Link to={`/game/${slug}`} style={{maxWidth: (48/100) * width}} className="list-game-name c-light w-bold s-28 mar-0 mar-r-20">{name}</Link>
                             <div className="game-icon-set d-flex a-vertical">
                                 {
                                     parent_platforms ? 
