@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from "react-router-dom";
 
 //Components
@@ -31,7 +31,10 @@ const List = ({ width, game: { genres, parent_platforms, background_image, image
                             <div className="game-icon-set d-flex a-vertical">
                                 {
                                     parent_platforms ? 
-                                        parent_platforms.filter((i, index) => index < 3).map(({platform: {id, name, slug}}) => { if(parentIcons.includes(`${slug}.svg`)) return <img key={id} src={require(`../../assets/parent/${slug}.svg`)} alt={`${name} Logo`}/> })
+                                        parent_platforms.filter((i, index) => index < 3).map(({platform: {id, name, slug}}) => {
+                                            if(parentIcons.includes(`${slug}.svg`)) return <img key={id} src={require(`../../assets/parent/${slug}.svg`)} alt={`${name} Logo`}/>
+                                            else return null;
+                                        })
                                     :
                                         null
                                 }

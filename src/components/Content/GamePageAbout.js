@@ -27,7 +27,10 @@ const GamePageAbout = ({game: { name, achievements, parent_platforms, platforms,
                 <div className="game-icon-set max mar-t-16">
                     {
                         parent_platforms ? 
-                            parent_platforms.filter((i, index) => index < 3).map(({platform: {id, name, slug}}) => { if(parentIcons.includes(`${slug}.svg`)) return <img key={id} src={require(`../../assets/parent/${slug}.svg`)} alt={`${name} Logo`}/> })
+                            parent_platforms.filter((i, index) => index < 3).map(({platform: {id, name, slug}}) => {
+                                if(parentIcons.includes(`${slug}.svg`)) return <img key={id} src={require(`../../assets/parent/${slug}.svg`)} alt={`${name} Logo`}/>
+                                else return null;
+                            })
                         :
                             null
                     }

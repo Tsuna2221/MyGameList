@@ -7,9 +7,6 @@ import { getData, getFromFullUrl } from '../client'
 //Partials
 import { convertQueryString } from '../shared/partials'
 
-//Data
-import { results } from '../data/games.json'
-
 export const GameListContext = createContext();
 
 class GameListContextProvider extends Component {
@@ -81,28 +78,31 @@ class GameListContextProvider extends Component {
     }
 
     state = {
-        games: [...results],
+        games: [],
         pathGame: {},
         next: null,
         loading: true,
     }
 
     mainComponentQuery = () => {
-        const path = window.location.pathname;
+        const path = this.props.history.location.pathname;
         const pathQuery = this.titles[path]
 
         window.addEventListener('scroll', this.detectBottom)
 
-        this.setState({...this.state, loading: true})
+        this.setState({...this.state, games: [], next: null, loading: true})
 
         return getData(pathQuery.type, pathQuery.query).then(({results, next}) => {
             this.setState({...this.state, games: results, next, loading: false})
         })
     }
 
-    // componentDidMount = () => this.mainComponentQuery()
+    componentDidMount = () => this.mainComponentQuery()
 
-    reRender = () => this.mainComponentQuery()
+    reRender = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth'})
+        return this.mainComponentQuery();
+    };
 
     componentWillUnmount = () => window.removeEventListener('scroll', this.detectBottom)
 

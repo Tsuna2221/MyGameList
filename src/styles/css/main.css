@@ -6,6 +6,13 @@ body {
   min-height: 100vh;
   min-height: -webkit-fill-available;
   font-family: "Metropolis"; }
+  body::-webkit-scrollbar {
+    width: 8px;
+    border-radius: 10px; }
+  body::-webkit-scrollbar-track {
+    background: #26262e; }
+  body::-webkit-scrollbar-thumb {
+    background: #0b0b0f; }
 
 a, p, h1, h2, h3, h4, h5, h6 {
   margin: 0;
@@ -28,9 +35,6 @@ ul, li {
 
 .content.list {
   transform: translateY(100px); }
-
-.content.game-display {
-  transform: translateY(450px); }
 
 .mdi {
   display: -webkit-box;

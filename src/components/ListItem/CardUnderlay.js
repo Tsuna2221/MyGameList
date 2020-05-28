@@ -8,7 +8,7 @@ import iconList from "../../data/platform-icons.json"; const { parentIcons } = i
 
 
 const CardUnderlay = ({game}) => {
-    const { genres, parent_platforms, background_image, image_background, id, metacritic, platforms, released, tba, name, short_screenshots, clip } = game;
+    const { genres, parent_platforms, metacritic, released, name, short_screenshots } = game;
     const underlay = useRef(null)
     const { scrollHeight } = underlay.current ? underlay.current : {}
 
@@ -27,9 +27,9 @@ const CardUnderlay = ({game}) => {
     const lines = [
         { label: "Release Date", name: released },
         { label: "Metascore", name: metacritic },
-        { label: "Genres", name: genres.map(({name}, index) => (
+        { label: "Genres", name: genres.map(({name, slug}, index) => (
             <Fragment>
-                <a className="c-light s-13" href="">{`${name}`}</a>
+                <a className="c-light s-13" href={`./browse/tags/${slug}`}>{`${name}`}</a>
                 {index === genres.length - 1 ? "" : ", "}
             </Fragment>
         ))}
@@ -40,7 +40,7 @@ const CardUnderlay = ({game}) => {
             <div className="orb-container d-flex a-center">
                 {
                     short_screenshots ? 
-                        short_screenshots.map(({id, image}) => <div className="screenshot-orb card" key={id}/>)
+                        short_screenshots.map(({id}) => <div className="screenshot-orb card" key={id}/>)
                     :
                         null
                 }    
@@ -51,7 +51,10 @@ const CardUnderlay = ({game}) => {
                     <div className="game-icon-set d-flex">
                         {
                             parent_platforms ? 
-                                parent_platforms.filter((i, index) => index < 3).map(({platform: {id, name, slug}}) => { if(parentIcons.includes(`${slug}.svg`)) return <img key={id} src={require(`../../assets/parent/${slug}.svg`)} alt={`${name} Logo`}/> })
+                                parent_platforms.filter((i, index) => index < 3).map(({platform: {id, name, slug}}) => {
+                                    if(parentIcons.includes(`${slug}.svg`)) return <img key={id} src={require(`../../assets/parent/${slug}.svg`)} alt={`${name} Logo`}/>
+                                    return null;
+                                })
                             :
                                 null
                         }

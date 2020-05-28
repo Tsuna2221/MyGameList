@@ -25,7 +25,7 @@ const SelectItem = ({label, name, className}) => {
     )
 }
 
-const AddToList = ({}) => (
+const AddToList = () => (
     <div className='add-to-list'>
         <div className="container">
             <h2 className="s-26 w-bold c-light">Add to List</h2>

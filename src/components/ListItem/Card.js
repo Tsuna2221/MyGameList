@@ -14,9 +14,9 @@ import { GamePageContext } from '../../contexts/GamePageContext'
 import iconList from "../../data/platform-icons.json"; const { parentIcons } = iconList;
 
 
-const Card = ({game, hideUnderlay, videoPreview, fromSimilar}) => {
+const Card = ({game, hideUnderlay, videoPreview}) => {
     const context = useContext(GamePageContext)
-    const { slug, parent_platforms, background_image, image_background, id, metacritic, platforms, releases, tba, name, short_screenshots, clip } = game;
+    const { slug, parent_platforms, background_image, image_background, id, name, clip } = game;
     const [videoLoadPercentage, setPercentage] = useState(0)
     const [hovering, setHover] = useState(null)
     const bg = background_image ? background_image : image_background;
@@ -43,7 +43,10 @@ const Card = ({game, hideUnderlay, videoPreview, fromSimilar}) => {
                 <div className="game-icon-set d-flex a-vertical">
                     {
                         parent_platforms ? 
-                            parent_platforms.filter((i, index) => index < 3).map(({platform: {id, name, slug}}) => { if(parentIcons.includes(`${slug}.svg`)) return <img key={id} src={require(`../../assets/parent/${slug}.svg`)} alt={`${name} Logo`}/> })
+                            parent_platforms.filter((i, index) => index < 3).map(({platform: {id, name, slug}}) => {
+                                if(parentIcons.includes(`${slug}.svg`)) return <img key={id} src={require(`../../assets/parent/${slug}.svg`)} alt={`${name} Logo`}/>
+                                else return null;
+                            })
                         :
                             null
                     }

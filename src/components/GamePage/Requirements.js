@@ -24,8 +24,8 @@ const SystemRequirements = ({ platforms }) => {
                                 filteredRequirements.map(({slug}, index) => <ButtonSmall func={() => setRequirementPlat(index)} requireIcon={true} icon={require(`../../assets/${slug}.svg`)} status={selectedRequirements === index}/>)
                             }
                         </div>
-                        <div className="sys-container cw-75 d-flex a-between">
-                            <div className="sys-requirements lh-high" dangerouslySetInnerHTML={{ __html: filteredRequirements[selectedRequirements].minimum }} />
+                        <div className="sys-container cw-100 d-flex a-between">
+                            <div className="sys-requirements lh-high mar-r-16" dangerouslySetInnerHTML={{ __html: filteredRequirements[selectedRequirements].minimum }} />
                             {
                                 filteredRequirements[selectedRequirements].recommended ?
                                     <div className="sys-requirements lh-high" dangerouslySetInnerHTML={{ __html: filteredRequirements[selectedRequirements].recommended }} />

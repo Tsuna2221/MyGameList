@@ -4,17 +4,16 @@ import React, { createContext, Component } from 'react';
 import { getGameData } from '../client'
 
 //Data
-import hollowData from '../data/hollow-knight.json' 
-import achievements from '../data/achievements.json' 
-import suggested from '../data/suggested.json' 
-import screenshots from '../data/screenshots.json' 
+// import hollowData from '../data/hollow-knight.json' 
+// import achievements from '../data/achievements.json' 
+// import screenshots from '../data/screenshots.json' 
+// import suggested from '../data/suggested.json' 
 
 export const GamePageContext = createContext();
 
 class GamePageContextProvider extends Component {
     state = {
         game: {},
-        similar: [...suggested.results],
         next: {},
         loading: true
     }

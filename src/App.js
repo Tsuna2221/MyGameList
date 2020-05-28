@@ -26,11 +26,13 @@ function App() {
 							<GameContent {...props}/>
 						</GamePageContextProvider>
 					)} path="/game/:id"/>
-					<Route exact path={["/", "/query", "/home/:path", "/browse/:path"]}>
-						<GameListContextProvider>
+
+					<Route exact render={(props) => (
+						<GameListContextProvider {...props}>
 							<Header type="list"/>
 							<Main/>
-						</GameListContextProvider>
+						</GameListContextProvider> 
+					)} path={["/", "/query", "/home/:path", "/browse/:path"]}>
 					</Route>
 				</div>
 			</Switch>

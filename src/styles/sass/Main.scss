@@ -8,6 +8,19 @@ body{
     min-height: 100vh;
     min-height: -webkit-fill-available;
     font-family: "Metropolis";
+
+    &::-webkit-scrollbar {
+        width: 8px;
+        border-radius: 10px;
+    }
+    
+    &::-webkit-scrollbar-track {
+        background: rgb(38, 38, 46); 
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background: rgb(11, 11, 15); 
+    }
 }
 
 a, p, h1, h2, h3, h4, h5, h6{
@@ -39,7 +52,7 @@ ul, li{
         transform: translateY(100px);
     }
     &.game-display{
-        transform: translateY(450px);
+        // transform: translateY(450px);
     }
 }
 

@@ -1,5 +1,4 @@
 import React, { Fragment, useState } from 'react';
-import { Link } from 'react-router-dom'
 
 const Sidebar = () => {
     const [currentHover, setHover] = useState(null)
@@ -46,13 +45,13 @@ const Sidebar = () => {
                                             <p className="c-light s-25 w-bold mar-t-8 mar-b-12">{title}</p>
                                             {subitems.map(({title, to}, index) => (
                                                 <div key={index} onMouseLeave={() => setHover(null)} onMouseEnter={() => setHover(index)} className="sub-item d-flex flex-end pos-relative cw-fit">
-                                                    <Link to={to} className="sub-title c-light2 cw-fit s-15 w-bold">{title}</Link>
+                                                    <a href={to} className="sub-title c-light2 cw-fit s-15 w-bold">{title}</a>
                                                     <div className={`sub-border pos-absolute${currentHover !== null && currentHover !== index ? " hide" : ""}`}/>
                                                 </div>
                                             ))}
                                         </Fragment>
                                     :
-                                        <Link to={to} className="nav-anchor c-light s-25 w-bold mar-v-8">{title}</Link>
+                                        <a href={to} className="nav-anchor c-light s-25 w-bold mar-v-8">{title}</a>
                                     }
                                 </Fragment>
                             ))}

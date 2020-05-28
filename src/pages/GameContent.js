@@ -26,10 +26,10 @@ const GameContent = () => {
         <Fragment>
             <div className="main-game-bg pos-absolute cw-max-view">
                 <div className="overlay-shadow pos-absolute z-index-100"/>
-                { loading ? null : <img src={game.background_image} style={{transform: `translateY(${-200 + scrollHeight}px)`}} className="cw-100"/> }
+                { loading ? null : <img src={game.background_image} alt="" style={{transform: `translateY(${-90 + scrollHeight}px)`}} className="cw-100"/> }
             </div>
 
-            <div className={`content game-display pos-absolute d-flex a-horizontal cw-fill z-index-100 ${loading ? "inactive" : ""}`}>
+            <div className={`content game-display pos-absolute d-flex a-horizontal cw-fill ch-fill z-index-100 ${loading ? "inactive" : ""}`}>
                 {
                     loading ? null : (
                         <div className="game-container">
