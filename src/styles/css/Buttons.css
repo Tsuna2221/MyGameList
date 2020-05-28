@@ -15,6 +15,8 @@
     transition: 0.24s ease;
     height: 100%;
     background-color: transparent; }
+    .btn.full:hover {
+      background-color: #491B9E; }
   .btn.default {
     border-radius: 4px;
     padding: 11.5px 20.5px;

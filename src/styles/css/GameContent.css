@@ -1,19 +1,46 @@
 .game-display {
   padding: 60px 130px 0 130px;
-  background-color: #13131A; }
+  background-color: #13131A;
+  transition: 0.55s ease; }
+  .game-display.inactive {
+    opacity: 0;
+    transform: translateY(500px) !important; }
+  .game-display .game-container {
+    max-width: calc(1366px - 130px - 130px); }
   .game-display .game-half-page {
     width: 47.5%; }
   .game-display .game-border {
     border-color: #40404B;
     margin: 26px 0; }
   .game-display .image-viewer .viewer-list {
-    max-width: 100%;
+    width: 100%;
     overflow-x: scroll; }
+    .game-display .image-viewer .viewer-list::-webkit-scrollbar {
+      height: 12px;
+      border-radius: 10px; }
+    .game-display .image-viewer .viewer-list::-webkit-scrollbar-track {
+      background: #26262e; }
+    .game-display .image-viewer .viewer-list::-webkit-scrollbar-thumb {
+      background: #0b0b0f; }
     .game-display .image-viewer .viewer-list img {
       width: 130px;
       margin-right: 6px; }
       .game-display .image-viewer .viewer-list img:last-child {
         margin-right: 0px; }
+  .game-display .add-to-list, .game-display .achivement-view {
+    background-color: #171721; }
+  .game-display .add-to-list {
+    max-width: 420px; }
+    .game-display .add-to-list .container {
+      padding: 32px 50px 0 50px; }
+  .game-display .achivement-view {
+    max-width: 100%; }
+    .game-display .achivement-view .container {
+      padding: 32px 50px; }
+    .game-display .achivement-view .acv-img-container {
+      width: 54px;
+      height: 54px;
+      border: 2px solid #363642; }
   .game-display .game-requirements .btn.small {
     margin-right: 12px; }
   .game-display .game-requirements .sys-requirements {
@@ -27,7 +54,9 @@
   top: 0;
   right: 0; }
   .main-game-bg img {
-    transform: translateY(-200px); }
+    opacity: 0;
+    transition: 0.14s;
+    animation: fade-game-background 1.1s forwards; }
   .main-game-bg .overlay-shadow {
     width: 100%;
     height: 700px;

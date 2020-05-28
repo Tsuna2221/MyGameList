@@ -43,7 +43,7 @@ const CardUnderlay = ({game}) => {
             <div className="pad-h-24">
                 <div className="d-flex a-between a-vertical">
                     <h2 className="mar-0 s-17 w-medium c-light mar-r-8 font-roboto">{name}</h2>
-                    <div className="list-icon-set d-flex">
+                    <div className="game-icon-set d-flex">
                         {
                             parent_platforms ? 
                                 parent_platforms.filter((i, index) => index < 3).map(({platform: {id, name, slug}}) => { if(parentIcons.includes(`${slug}.svg`)) return <img key={id} src={require(`../../assets/parent/${slug}.svg`)} alt={`${name} Logo`}/> })

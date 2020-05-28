@@ -100,7 +100,7 @@ class GameListContextProvider extends Component {
         })
     }
 
-    // componentDidMount = () => this.mainComponentQuery()
+    componentDidMount = () => this.mainComponentQuery()
 
     componentWillUnmount = () => window.removeEventListener('scroll', this.detectBottom)
 

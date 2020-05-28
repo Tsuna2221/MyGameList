@@ -16,8 +16,6 @@ a, p, h1, h2, h3, h4, h5, h6{
     text-decoration: none;
 }
 
-
-
 br{
     line-height: 5px;    
 }
@@ -58,4 +56,13 @@ ul, li{
     min-width: 60px;
     height: 60px;
     border-radius: 15px;
+}
+
+select{
+    color: $tx-light;
+    height: 38px;
+    outline: none;
+    border: none;
+    padding: 0 13px;
+    background-color: $bg-select;
 }

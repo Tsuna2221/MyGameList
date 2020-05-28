@@ -6,7 +6,7 @@ const ImageViewer = ({clip, screenshots}) => {
     return (
         <div className='image-viewer'>
             <img className="cw-100" src={currentMedia} alt=""/>
-            <div className="viewer-list d-flex pad-t-10 ">
+            <div className="viewer-list d-flex pad-t-10 pad-b-6">
                 {screenshots.map(({image, id}) => <img className="clickable" onClick={() => setMedia(image)} src={image} id={id} alt=""/>)}
             </div>
         </div>

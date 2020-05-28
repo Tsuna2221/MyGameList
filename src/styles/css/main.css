@@ -44,3 +44,11 @@ ul, li {
   min-width: 60px;
   height: 60px;
   border-radius: 15px; }
+
+select {
+  color: #E6E6E6;
+  height: 38px;
+  outline: none;
+  border: none;
+  padding: 0 13px;
+  background-color: #20202B; }

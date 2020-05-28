@@ -1,5 +1,8 @@
 import React from 'react';
 
+//Components
+import AchievementsView from '../GamePage/AchievementsView'
+
 //Data
 import iconList from "../../data/platform-icons.json"; const { parentIcons } = iconList;
 
@@ -15,7 +18,7 @@ const AboutItem = ({margin, item: { label, el, text, collapse, maxWidth }}) => (
     </div>
 )
 
-const GamePageAbout = ({game: { name, parent_platforms, platforms, developers, publishers, description_raw, released, genres }}) => {
+const GamePageAbout = ({game: { name, achievements, parent_platforms, platforms, developers, publishers, description_raw, released, genres }}) => {
     return (
         <div className="game-half-page">
             <div className="game-title">
@@ -63,8 +66,8 @@ const GamePageAbout = ({game: { name, parent_platforms, platforms, developers, p
                         </span>
                     ))}}/>
                 </div>
-            
             </div>
+            <AchievementsView achievements={achievements}/>
         </div>
     )
 }
