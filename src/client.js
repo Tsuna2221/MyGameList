@@ -8,7 +8,11 @@ export const getData = (type, query) => {
 }
 
 export const getGameData = (game) => {
-    return axios.get(`${baseUrl}/games/${game}`, { headers: { 'User-Agent': 'local-gamedb-app' } }).then(({data}) => data);
+    const params = ["", "/achievements?page_size=50", "/suggested?page_size=10"]
+
+    return Promise.all(params.map((str) => {
+        return axios.get(`${baseUrl}/games/${game}${str}`, { headers: { 'User-Agent': 'local-gamedb-app' } }).then(({data}) => data);
+    }))
 }
 
 export const getFromFullUrl = (url) => axios.get(url, { headers: { 'User-Agent': 'local-gamedb-app' } }).then(({data}) => data);

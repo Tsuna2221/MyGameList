@@ -4,18 +4,27 @@ body{
     background-color: $bg-main;
     margin: 0;
     padding: 0;
+    max-width: 100vw;
     min-height: 100vh;
     min-height: -webkit-fill-available;
     font-family: "Metropolis";
 }
 
-a, p{
+a, p, h1, h2, h3, h4, h5, h6{
     margin: 0;
     padding: 0;
     text-decoration: none;
 }
 
-a:hover{ text-decoration: underline; }
+
+
+br{
+    line-height: 5px;    
+}
+
+a{
+    &.underline:hover{ text-decoration: underline; }
+}
 
 input{
     outline: none;
@@ -28,7 +37,12 @@ ul, li{
 }
 
 .content{
-    transform: translateY(100px);
+    &.list{
+        transform: translateY(100px);
+    }
+    &.game-display{
+        transform: translateY(450px);
+    }
 }
 
 .mdi {

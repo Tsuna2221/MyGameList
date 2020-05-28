@@ -9,6 +9,7 @@ import Header from './components/Header'
 
 //Contexts
 import GameListContextProvider from './contexts/GameListContext'
+import GamePageContextProvider from './contexts/GamePageContext'
 
 //Page
 import Main from './pages/Main'
@@ -18,13 +19,19 @@ function App() {
 	return (
 		<Router>
 			<Switch>
-				<GameListContextProvider>
-					<div className='Main'>
-						<Header/>
-						<Route exact component={GameContent} path="/game/:id"/>
-						<Route exact component={Main} path={["/", "/query", "/home/:path", "/browse/:path"]}/>
-					</div>
-				</GameListContextProvider>
+				<div className='Main'>
+					<Header/>
+					<Route exact render={(props) => (
+						<GamePageContextProvider {...props}>
+							<GameContent {...props}/>
+						</GamePageContextProvider>
+					)} path="/game/:id"/>
+					<Route exact path={["/", "/query", "/home/:path", "/browse/:path"]}>
+						<GameListContextProvider>
+							<Main/>
+						</GameListContextProvider>
+					</Route>
+				</div>
 			</Switch>
 		</Router>
 	);

@@ -118,6 +118,9 @@
 .s-45 {
   font-size: 45px; }
 
+.s-47 {
+  font-size: 47px; }
+
 .lowercase {
   text-transform: lowercase; }
 
@@ -132,3 +135,9 @@
 
 .font-roboto {
   font-family: "Roboto"; }
+
+.ws-pre-wrap {
+  white-space: pre-wrap; }
+
+.ws-nowrap {
+  white-space: nowrap; }

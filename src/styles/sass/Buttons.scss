@@ -10,8 +10,12 @@
     &.small{
         width: 48px;
         height: 48px;
-        border-radius: 15px;
+        border-radius: 8px;
         transition: 0.2s ease;
+
+        .btn-icon{
+            width: 35%;
+        }
 
         span{
             color: white;
@@ -22,15 +26,18 @@
         transition: 0.24s ease;
         height: 100%;
         background-color: transparent;
-
-        &:hover{
-            background-color: $bg-secondary;
-        }
     }
 
     &.default{
         border-radius: 4px;
-        padding: 11.5px 24.5px;
+        padding: 11.5px 20.5px;
+        transition: 0.2s ease;
+
+        img{ height: 14px; }
+
+        &:hover{
+            background-color: $bg-secondary;
+        }
     }
 }
 

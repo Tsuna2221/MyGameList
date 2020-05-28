@@ -27,7 +27,7 @@ const List = ({ width, game: { genres, parent_platforms, background_image, image
                     <div className="details-container mar-r-10">
                         <div className="d-flex mar-b-8">
                             <h2 style={{maxWidth: (48/100) * width}} className="list-game-name c-light w-bold s-28 mar-0 mar-r-20">{name}</h2>
-                            <div className="list-icon-set d-flex a-vertical">
+                            <div className="game-icon-set d-flex a-vertical">
                                 {
                                     parent_platforms ? 
                                         parent_platforms.filter((i, index) => index < 3).map(({platform: {id, name, slug}}) => { if(parentIcons.includes(`${slug}.svg`)) return <img key={id} src={require(`../../assets/parent/${slug}.svg`)} alt={`${name} Logo`}/> })

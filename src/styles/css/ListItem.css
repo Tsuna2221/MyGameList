@@ -5,13 +5,17 @@
   .list-item .list-image {
     transition: 0.3s ease; }
 
-.list-icon-set img, .card-icon-set img {
+.game-icon-set img {
   width: auto;
   max-width: 34px;
   height: 14px;
   margin-right: 10px; }
-  .list-icon-set img:last-child, .card-icon-set img:last-child {
+  .game-icon-set img:last-child {
     margin-right: 0px; }
+
+.game-icon-set.max img {
+  height: 17px;
+  margin-right: 10px; }
 
 .screenshot-orb {
   width: 14px;

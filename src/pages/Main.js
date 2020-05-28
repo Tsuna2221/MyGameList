@@ -5,7 +5,7 @@ import Content from '../components/Content'
 import Sidebar from '../components/Sidebar'
 
 const Main = () => (
-    <div className="content d-flex mar-h-60">
+    <div className="content list d-flex mar-h-60">
         <Content/>
         <Sidebar/>
     </div>

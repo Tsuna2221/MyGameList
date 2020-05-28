@@ -1,0 +1,63 @@
+@import "./Variables.scss";
+
+.game-display{
+    padding: 60px 130px 0 130px;
+    background-color: $bg-main;
+
+    .game-half-page{
+        width: 47.5%;
+    }
+
+    .game-border{
+        border-color: $bg-btn-gray;
+        margin: 26px 0;
+    }
+
+    .image-viewer{
+
+        .viewer-list{
+            max-width: 100%;
+            overflow-x: scroll;
+            img{
+                width: 130px;
+                margin-right: 6px;
+
+                &:last-child{
+                    margin-right: 0px;
+                }
+            }
+        }
+    }
+
+    .game-requirements{
+        .btn{
+            &.small{
+                margin-right: 12px;
+            }
+        }
+
+        .sys-requirements{
+            color: $tx-light;
+            font-size: 15px;
+
+            strong{
+                color: $tx-shade;
+                font-weight: 300;
+            }
+        }
+    }
+}
+
+.main-game-bg{
+    top: 0;
+    right: 0;
+    img{
+        transform: translateY(-200px);
+    }
+
+    .overlay-shadow{
+        width: 100%;
+        height: 700px;
+        background-color: #13131b99;
+    }
+}

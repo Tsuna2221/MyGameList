@@ -24,7 +24,7 @@ const Header = () => {
     });
 
     return (
-        <div className={`main-header z-index-100 pos-fixed pad-h-80${scrollHeight > 40 ? " active" : ""}`}>
+        <div className={`main-header z-index-200 pos-fixed pad-h-80${scrollHeight > 40 ? " active" : ""}`}>
             <div className="header-container d-flex a-vertical cw-100 a-between">
                 <div className="d-flex a-vertical">
                     <span className="logo c-light s-24 mar-r-50">Logo?</span>

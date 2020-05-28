@@ -18,8 +18,7 @@
     }
 }
 
-.list-icon-set, .card-icon-set{
-                
+.game-icon-set{
     img{
         width: auto;
         max-width: 34px;
@@ -29,6 +28,11 @@
         &:last-child{
             margin-right: 0px;
         }
+    }
+
+    &.max img{
+        height: 17px;
+        margin-right: 10px;
     }
 }
 

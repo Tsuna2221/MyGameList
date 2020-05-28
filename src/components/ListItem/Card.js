@@ -33,7 +33,7 @@ const Card = ({game}) => {
             
             <div className="card-title pos-absolute">
                 <p className="s-19 w-bold c-light mar-b-12">{name}</p>
-                <div className="card-icon-set d-flex a-vertical">
+                <div className="game-icon-set d-flex a-vertical">
                     {
                         parent_platforms ? 
                             parent_platforms.filter((i, index) => index < 3).map(({platform: {id, name, slug}}) => { if(parentIcons.includes(`${slug}.svg`)) return <img key={id} src={require(`../../assets/parent/${slug}.svg`)} alt={`${name} Logo`}/> })

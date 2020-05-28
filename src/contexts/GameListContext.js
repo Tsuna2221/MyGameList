@@ -2,7 +2,7 @@ import React, { createContext, Component } from 'react';
 import moment from 'moment';
 
 //Client
-import { getData, getFromFullUrl, getGameData } from '../client'
+import { getData, getFromFullUrl } from '../client'
 
 //Partials
 import { convertQueryString } from '../shared/partials'
@@ -85,13 +85,6 @@ class GameListContextProvider extends Component {
         pathGame: {},
         next: null,
         loading: true,
-        gameLoading: true
-    }
-
-    gameDataQuery = (game) => {
-        this.setState({...this.state, gameLoading: true})
-        
-        return getGameData(game).then(game => this.setState({...this.state, gameLoading: false, pathGame: game}))
     }
 
     mainComponentQuery = () => {
@@ -102,11 +95,9 @@ class GameListContextProvider extends Component {
 
         this.setState({...this.state, loading: true})
 
-        if(path.split("/")[1] !== "game"){
-            return getData(pathQuery.type, pathQuery.query).then(({results, next}) => {
-                this.setState({...this.state, games: results, next, loading: false})
-            })
-        }
+        return getData(pathQuery.type, pathQuery.query).then(({results, next}) => {
+            this.setState({...this.state, games: results, next, loading: false})
+        })
     }
 
     // componentDidMount = () => this.mainComponentQuery()
