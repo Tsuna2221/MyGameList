@@ -7,7 +7,14 @@
   background: -moz-linear-gradient(0deg, #13131a 0%, #13131a 82%, rgba(19, 19, 26, 0.8) 100%);
   background: -webkit-linear-gradient(0deg, #13131a 0%, #13131a 82%, rgba(19, 19, 26, 0.8) 100%);
   background: linear-gradient(0deg, #13131a 0%, #13131a 82%, rgba(19, 19, 26, 0.8) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#13131a",endColorstr="#13131a",GradientType=1); }
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#13131a",endColorstr="#13131a",GradientType=1);
+  height: 100%;
+  z-index: 102; }
+  .game-display.hovering {
+    transition-delay: 0.65s;
+    height: 0%;
+    overflow: hidden;
+    padding: 0px; }
   .game-display.inactive {
     opacity: 0;
     transform: translateY(500px) !important; }
@@ -80,12 +87,53 @@
   .main-game-bg img {
     opacity: 0;
     transition: 0.14s;
-    animation: fade-game-background 1.1s forwards; }
+    animation: fade-game-background 1.1s forwards;
+    max-height: 100vh;
+    object-fit: cover; }
+    .main-game-bg img.hovering {
+      transition: 0.5s ease;
+      transition-delay: 0.65s; }
   .main-game-bg .overlay-shadow {
     width: 100%;
     height: 100%;
     background-color: #13131b99;
     transition: 0.5s ease;
-    transition-delay: 0.4s; }
-    .main-game-bg .overlay-shadow:hover {
+    transition-delay: 0.65s;
+    max-height: 100vh; }
+    .main-game-bg .overlay-shadow:hover, .main-game-bg .overlay-shadow.hovering {
       background-color: transparent; }
+
+.hover-container {
+  height: 75px;
+  z-index: 101;
+  bottom: 0px;
+  left: 0px; }
+  .hover-container.loading {
+    height: 100vh;
+    z-index: 1000;
+    opacity: 0; }
+  .hover-container.hovering .hover-indicator {
+    transition: 0.5s ease;
+    transition-delay: 1.3s;
+    transform: translateY(0px); }
+  .hover-container.hovering .hover-bar {
+    width: 150px; }
+
+.hover-indicator {
+  height: 75px;
+  background: #13131a;
+  background: -moz-linear-gradient(0deg, rgba(19, 19, 26, 0.93041) 24%, rgba(19, 19, 26, 0.448617) 77%, rgba(0, 212, 255, 0) 100%, rgba(19, 19, 26, 0) 100%);
+  background: -webkit-linear-gradient(0deg, rgba(19, 19, 26, 0.93041) 24%, rgba(19, 19, 26, 0.448617) 77%, rgba(0, 212, 255, 0) 100%, rgba(19, 19, 26, 0) 100%);
+  background: linear-gradient(0deg, rgba(19, 19, 26, 0.93041) 24%, rgba(19, 19, 26, 0.448617) 77%, rgba(0, 212, 255, 0) 100%, rgba(19, 19, 26, 0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#13131a",endColorstr="#13131a",GradientType=1);
+  transition: 0.13s ease;
+  transition-delay: 0s;
+  transform: translateY(75px); }
+
+.hover-bar {
+  width: 5px;
+  height: 5px;
+  background-color: #dddddd;
+  border-radius: 50px;
+  transition: 0.5s ease;
+  transition-delay: 1.9s; }

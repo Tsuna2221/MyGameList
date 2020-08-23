@@ -5,7 +5,7 @@ import Card from '../ListItem/Card'
 
 const SimilarGames = ({similar}) => {
     return (
-        <div className='similar-games'>
+        <div className='similar-games pad-b-30'>
             <h2 className="s-26 w-bold c-light mar-b-16">Similar Game</h2>
             <div className="similar-container d-flex overflow-x-scroll pad-b-6">
                 {

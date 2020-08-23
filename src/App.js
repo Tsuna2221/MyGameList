@@ -19,22 +19,21 @@ function App() {
 	return (
 		<Router>
 			<Switch>
-				<div className='Main'>
-					<Route exact render={(props) => (
-						<GamePageContextProvider {...props}>
-							<Header type="game"/>
-							<GameContent {...props}/>
-						</GamePageContextProvider>
-					)} path="/game/:id"/>
+				<Route exact render={(props) => (
+					<GamePageContextProvider {...props}>
+						<GameContent {...props}/>
+					</GamePageContextProvider>
+				)} path="/game/:id"/>
 
 					<Route exact render={(props) => (
 						<GameListContextProvider {...props}>
-							<Header type="list"/>
-							<Main/>
+							<div className='Main'>
+								<Header type="list"/>
+								<Main/>
+							</div>
 						</GameListContextProvider> 
 					)} path={["/", "/query", "/home/:path", "/browse/:path"]}>
 					</Route>
-				</div>
 			</Switch>
 		</Router>
 	);

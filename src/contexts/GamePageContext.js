@@ -15,14 +15,22 @@ class GamePageContextProvider extends Component {
     state = {
         game: {},
         next: {},
-        loading: true
+        loading: true,
+        scrollHeight: 0,
+        isHovering: true
     }
 
+    
     // componentDidMount = () => setTimeout(() => {
     //     const game = { ...hollowData, similar: suggested.results, screenshots: screenshots.results, achievements: achievements.results };
 
     //     this.setState({...this.state, loading: false, game})
     // }, 2000);
+
+    setHoverStatus = (status) => {
+        document.body.classList[status ? "add" : "remove"]("hovering")
+        this.setState({...this.state, isHovering: status})
+    }
 
     drawGame = () => {
         return this.setState({...this.state, loading: true}, () => getGameData(this.props.match.params.id).then(([game, achievements, similar, shots]) => this.setState({
@@ -33,7 +41,20 @@ class GamePageContextProvider extends Component {
         })))
     }
 
-    componentDidMount = () => this.drawGame();
+    updateScrollHeight = (e) => {
+        e.preventDefault()
+        e.stopPropagation()
+        this.setState({...this.state, scrollHeight: (40 / 100) * window.scrollY})
+        return false;
+    }
+
+    componentDidMount = () => {
+        window.addEventListener("scroll", this.updateScrollHeight);
+
+        this.drawGame()
+    };
+
+    componentWillUnmount = () => window.removeEventListener("scroll", this.updateScrollHeight);
 
     reRender = () => {
         window.scrollTo({ top: 0, behavior: 'smooth'})
@@ -42,7 +63,7 @@ class GamePageContextProvider extends Component {
     
     render(){
         return (
-            <GamePageContext.Provider value={{...this.state, reRender: this.reRender}}>
+            <GamePageContext.Provider value={{...this.state, setHoverStatus: this.setHoverStatus, reRender: this.reRender}}>
                 {this.props.children}
             </GamePageContext.Provider>
         )

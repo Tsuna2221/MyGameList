@@ -46,7 +46,7 @@ const Content = () => {
                         games.length > 0 ?
                             games.map(game => 
                                 viewStyle === "view-module" ? 
-                                    <Card key={game.id} game={game}/>
+                                    <Card videoPreview={true} key={game.id} game={game}/>
                                 :
                                     <List key={game.id} width={mainWidth} game={game}/>
                             )

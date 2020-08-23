@@ -23,7 +23,7 @@ const GamePageAbout = ({game: { name, achievements, parent_platforms, platforms,
         <div className="game-half-page">
             <div className="game-title">
                 <h1 className="c-light s-47 w-bold">{name}</h1>
-                <span className="c-shade s-21 w-semi-bold">{developers[0].name}</span>
+                <span className="c-shade s-21 w-semi-bold">{developers[0] ? developers[0].name : ""}</span>
                 <div className="game-icon-set max mar-t-16">
                     {
                         parent_platforms ? 
