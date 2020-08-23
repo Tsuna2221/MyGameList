@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect, Fragment } from 'react';
+import React, { useContext } from 'react';
 
 //Contexts
 import { GamePageContext } from '../contexts/GamePageContext';
