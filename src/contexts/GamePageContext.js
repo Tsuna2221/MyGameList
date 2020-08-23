@@ -17,7 +17,7 @@ class GamePageContextProvider extends Component {
         next: {},
         loading: true,
         scrollHeight: 0,
-        isHovering: true
+        isHovering: false
     }
 
     
