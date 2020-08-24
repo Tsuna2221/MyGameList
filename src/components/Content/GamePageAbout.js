@@ -48,8 +48,8 @@ const GamePageAbout = ({game: { name, achievements, parent_platforms, platforms,
                 </div>
 
                 <div className="d-flex a-vertical a-between mar-t-16">
-                    <AboutItem item={{label: "Developers", text: developers[0].name}}/>
-                    <AboutItem item={{label: "Publishers", text: publishers[0].name}}/>
+                    <AboutItem item={{label: "Developers", text: developers[0]?.name}}/>
+                    <AboutItem item={{label: "Publishers", text: publishers[0]?.name}}/>
                 </div>
 
                 <div className="mar-t-16">

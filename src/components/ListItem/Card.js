@@ -9,18 +9,24 @@ import CardUnderlay from "./CardUnderlay";
 
 //Contexts
 import { GamePageContext } from '../../contexts/GamePageContext'
+import { GameListContext } from '../../contexts/GameListContext'
 
 //Data
 import iconList from "../../data/platform-icons.json"; const { parentIcons } = iconList;
 
 
 const Card = ({game, hideUnderlay, videoPreview}) => {
+    const listContext = useContext(GameListContext)
+    const { mainPath } = listContext || {mainPath: ""};
     const context = useContext(GamePageContext)
     const { slug, parent_platforms, background_image, image_background, id, name, clip } = game;
     const [videoLoadPercentage, setPercentage] = useState(0)
     const [hovering, setHover] = useState(null)
     const bg = background_image ? background_image : image_background;
     const bgImage = bg ? bg.replace("/media/", "/media/crop/600/400/") : "";
+    const path = mainPath.split(/\//g).slice(1)
+
+    console.log(mainPath)
 
     return (
         <div key={id} onMouseLeave={() => setTimeout(() => setHover(false), 400)} onMouseEnter={() => setHover(true)} className={`card-item mar-2 pos-relative ${hovering ? "active" : ""}`} style={{backgroundImage: `url(${bgImage})`}}>
@@ -58,7 +64,12 @@ const Card = ({game, hideUnderlay, videoPreview}) => {
                     }
                 </div>
             </div>
-            <Link onClick={context ? context.reRender : null} className="cw-100 ch-100" to={`/game/${slug}`}><div className="card-shadow"/></Link>
+            {
+                path[0] === "browse" && !path[2] ? 
+                    <a href={`${mainPath}/${slug}`} className="cw-100 ch-100"><div className="card-shadow"/></a>
+                :
+                    <Link onClick={context ? context.reRender : null} className="cw-100 ch-100" to={`/game/${slug}`}><div className="card-shadow"/></Link>
+            }
             <div style={{width: `${videoLoadPercentage}%`}} className={`bottom-progress pos-absolute ${videoLoadPercentage > 95 ? "no-opacity" : ""} ${hovering ? "" : "no-opacity"}`}/>
         </div>
     )

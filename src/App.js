@@ -32,7 +32,7 @@ function App() {
 								<Main/>
 							</div>
 						</GameListContextProvider> 
-					)} path={["/", "/query", "/home/:path", "/browse/:path"]}>
+					)} path={["/", "/query", "/home/:path", "/browse/:path", "/browse/:path/:query"]}>
 					</Route>
 			</Switch>
 		</Router>

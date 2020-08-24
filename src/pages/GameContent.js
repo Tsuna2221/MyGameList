@@ -7,17 +7,19 @@ import { GamePageContext } from '../contexts/GamePageContext';
 import GamePageAbout from '../components/Content/GamePageAbout'
 import GamePageMedia from '../components/Content/GamePageMedia'
 import GamePageBottom from '../components/Content/GamePageBottom'
+import GameMedia from '../components/GamePage/GameMedia'
 import Header from '../components/Header'
 
 const GameContent = () => {
     const { game, loading, scrollHeight, setHoverStatus, isHovering } = useContext(GamePageContext);
-
+    console.log(game)
     return (
         <div className={`Main${isHovering ? " hovering" : ""}`}>
             <Header type="game"/>
             <div className="main-game-bg pos-absolute cw-max-view">
                 <div onMouseEnter={() => setHoverStatus(true)} onMouseLeave={() => setHoverStatus(false)} className={`overlay-shadow pos-absolute z-index-100${isHovering ? " hovering" : ""}`}/>
-                { loading ? null : <img src={game.background_image} alt="" style={{transform: `translateY(${isHovering ? 0 : -90 + scrollHeight}px)`}} className={`cw-100${isHovering ? " hovering" : ""}`}/> }
+                <GameMedia/>
+                { loading ? null : <img src={game.background_image} alt="" style={{transform: `translateY(${isHovering ? 0 : -40 + scrollHeight}px)`}} className={`cw-100${isHovering ? " hovering" : ""}`}/> }
             </div>
 
             <div className={`content game-display pos-absolute d-flex a-horizontal cw-fill ${isHovering ? " hovering" : ""}${loading || isHovering ? " inactive" : ""}`}>

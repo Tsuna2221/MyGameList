@@ -82,9 +82,11 @@ class GameListContextProvider extends Component {
         pathGame: {},
         next: null,
         loading: true,
+        mainPath: this.props.history.location.pathname
     }
 
     mainComponentQuery = () => {
+        const { params } = this.props.match
         const path = this.props.history.location.pathname;
         const pathQuery = this.titles[path]
 
@@ -92,7 +94,7 @@ class GameListContextProvider extends Component {
 
         this.setState({...this.state, games: [], next: null, loading: true})
 
-        return getData(pathQuery.type, pathQuery.query).then(({results, next}) => {
+        return getData(params.query ? "games" : pathQuery.type, params.query ? `?${params.path}=${params.query}` : pathQuery.query).then(({results, next}) => {
             this.setState({...this.state, games: results, next, loading: false})
         })
     }

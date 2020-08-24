@@ -34,7 +34,7 @@ const Content = () => {
         <div style={{width: mainWidth}} className='main-content'>
             <div className="grid-container">
                 <div className="">
-                    <h1 className="s-45 w-bold c-light mar-b-14">{titles[path].title}</h1>
+                    <h1 className="s-45 w-bold c-light mar-b-14">{titles[path]?.title}</h1>
                     <div className="d-flex a-vertical mar-b-26">
                         {viewIcons.map((icon, index) => (
                             <ButtonSmall style={index === viewIcons.length - 1 ? { marginLeft: 10 } : {}} icon={icon} func={() => setViewStyle(icon)} status={viewStyle === icon}/>

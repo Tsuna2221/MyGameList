@@ -20,6 +20,10 @@
             }
         }
     }
+
+    &:hover{
+        background-color: $bg-header;
+    }
     
     &.active{
         background-color: $bg-header;

@@ -12,6 +12,8 @@
       background-color: #272730; }
       .main-header .header-container .search-bar::placeholder {
         color: #6c6c75; }
+  .main-header:hover {
+    background-color: #1c1c27; }
   .main-header.active {
     background-color: #1c1c27;
     width: calc(100vw - 54px * 2);

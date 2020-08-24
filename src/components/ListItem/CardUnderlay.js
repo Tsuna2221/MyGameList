@@ -27,7 +27,7 @@ const CardUnderlay = ({game}) => {
     const lines = [
         { label: "Release Date", name: released },
         { label: "Metascore", name: metacritic },
-        { label: "Genres", name: genres.map(({name, slug}, index) => (
+        { label: "Genres", name: genres?.map(({name, slug}, index) => (
             <Fragment>
                 <a className="c-light s-13" href={`./browse/tags/${slug}`}>{`${name}`}</a>
                 {index === genres.length - 1 ? "" : ", "}
